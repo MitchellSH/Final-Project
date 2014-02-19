@@ -1,9 +1,32 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:100,300);
+a {
+  padding: 34%;
+  text-shadow: 0px 0px 5px white;
+}
+.breadcrumbs {
+  background: linear-gradient(#62d5fe, #68befe);
+  box-shadow: 0px 0px 15px #858685;
+}
+button {
+  font-family: 'Lato', sans-serif;
+  background: linear-gradient(#62d5fe, #68befe);
+  box-shadow: 0px 0px 15px #858685;
+  color: white;
+  text-shadow: 0px 0px 5px black;
+  border: 1px solid #FEFAF3;
+  margin: 5px;
+}
 body {
-  background-color: #add8e6;
+  background-image: url(/media/greenblue.png);
+  font-family: 'Lato', sans-serif;
 }
-#picture {
-  background-image: url();
+.panel {
+  background: linear-gradient(#0cfe94, #62d5fe);
+  box-shadow: 0px 0px 15px #858685;
 }
-#picture1 {
-  background-image: url();
+#ecode {
+  font-family: 'Lato', sans-serif;
+  text-align: center;
+  color: white;
+  text-shadow: 1px 1px 5px black;
 }
