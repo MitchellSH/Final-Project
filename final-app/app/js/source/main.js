@@ -13,19 +13,49 @@
     $('#css').click(cssMagic);
     $('#lodash').click(lodashMagic);
     $('#git').click(gitMagic);
+  }
 
-  /*var questions = [
-    ['lkdsajfl', '34'],
-    ['lskdfj', '45'],
-    ['fdlsakj', '56'],
-    ['dfsljad' '56']
-  ];*/
 
-  //var random = _.shuffle(questions);
+  var questions = [
+    ['How many Doctors are there?', '12'],
+    ['How many years has Doctor Who been around?', '50'],
+    ['Which Doctor(number) wears a bow tie?', '11'],
+    ['Which Doctor(number) said "Allons-y"?', '10'],
+    ['How many moons does earth have?', '1'],
+    ['How old is Lauren?', '22'],
+    ['How old is Mitch?', '20'],
+    ['How many minutes are in a hour?', '60']
+  ];
+  
+  var random = _.shuffle(questions);
+
+  function askQuestion(){
+    for(var i = 0; i < random.length; i++){
+      $('#q' + i).text(random[i][0]);
+    }
 
   }
+
+  function answerQuestion(){
+    var qnum = $(this).data('qnum');
+    if($('.answer'+qnum).val()===random[qnum][1]){
+      alert('right');
+    }else{
+      alert('wrong');
+    }
+  }
+
+  function newQuestion(){
+    for(var i = 0; i < random.length; i++){
+      $('#q' + i).empty();
+    }
+  }
+
   function produceTable(){
     $('#questions').show();
+    $('#quizB').show().click(askQuestion);
+    $('#newq').show().click(newQuestion);
+    $('button.tiny.radius').click(answerQuestion);
   }
 
   function hideItAll(){
@@ -43,7 +73,6 @@
     $('#search').text('Search Jquery').show().addClass('.searchJquery');
     $('#quiz').text('Quiz Jquery').show().addClass('.quizJquery').click(produceTable);
     $('#nameQuiz').text('Jquery Quiz');
-    //$('#newq').click(jqueryQuestion);
   }
   function htmlMagic(){
     hideItAll();
@@ -82,19 +111,5 @@
     $('#nameQuiz').text('Git Quiz');
   }
 
-  //function jqueryQuestion(){
-    //for(var i = 0; i < random.length; i++){
-      //$('#q' + 1).text(random[i][0]);
-    //}
-  //}
-  /*function jqueryAnswer(){
-    var qnum = $(this).data('qnum');
-    if($('.answer'+qnum).val()===random[qnum][1]){
-      alert('right');
-    }else{
-      alert('wrong');
-    }
-  }
-*/
 })();
 
