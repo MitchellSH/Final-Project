@@ -17,7 +17,7 @@
 
 
   var questions = [
-    ['How many Doctors are there?', '12'],
+    ['flkdsajdlka;dfldsfaj', '12'],
     ['How many years has Doctor Who been around?', '50'],
     ['Which Doctor(number) wears a bow tie?', '11'],
     ['Which Doctor(number) said "Allons-y"?', '10'],
@@ -26,42 +26,55 @@
     ['How old is Mitch?', '20'],
     ['How many minutes are in a hour?', '60']
   ];
-  
-  var random = _.shuffle(questions);
 
-  function askQuestion(){
+ /* var questions2 = [
+    ['How many pigs are there?', '12'],
+    ['How many years has piggy Who been around?', '50'],
+    ['Which Doctor(number) wears a pig tie?', '11'],
+    ['Which Doctor(number) said "Allons-pig"?', '10'],
+    ['How many pigs does earth have?', '1'],
+    ['How old is Pig?', '22'],
+    ['How old is Piggie?', '20'],
+    ['How many pigs are in a hour?', '60']
+  ];*/
+
+  
+  function chooseQs(){
+    var name = $(this).attr('name');
+    switch (name){
+      case 'jqueryQuiz':
+        askQuestion(questions);
+    }
+  }
+
+  function askQuestion(x){
+    var array = x;
+    var random = _.shuffle(array);
     for(var i = 0; i < random.length; i++){
       $('#q' + i).text(random[i][0]);
     }
 
   }
 
-  function answerQuestion(){
+  /* function answerQuestion(){
     var qnum = $(this).data('qnum');
-    if($('.answer'+qnum).val()===random[qnum][1]){
+    if($('.answer'+qnum).val()===[qnum][1]){
       alert('right');
     }else{
       alert('wrong');
     }
   }
-
-  function newQuestion(){
-    for(var i = 0; i < random.length; i++){
-      $('#q' + i).empty();
-    }
-  }
+*/
 
   function produceTable(){
-    $('#questions').show();
-    $('#quizB').show().click(askQuestion);
-    $('#newq').show().click(newQuestion);
-    $('button.tiny.radius').click(answerQuestion);
+    $('#tableQuestions').show();
+    $('button.tiny.radius').click();
+   // $('#start').show();
   }
 
   function hideItAll(){
-    $('#quizB').hide();
-    $('#newq').hide();
-    $('#questions').hide();
+    $('#start').hide();
+    $('#tableQuestions').hide();
   }
   function home(){
     hideItAll();
@@ -72,13 +85,14 @@
     hideItAll();
     $('#search').text('Search Jquery').show().addClass('.searchJquery');
     $('#quiz').text('Quiz Jquery').show().addClass('.quizJquery').click(produceTable);
-    $('#nameQuiz').text('Jquery Quiz');
+    $('#start').show().attr('name','jqueryQuiz').click(chooseQs);
   }
   function htmlMagic(){
     hideItAll();
     $('#search').text('Search HTML/Jade').show().addClass('.searchHTML/Jade');
     $('#quiz').text('Quiz HTML/Jade').show().addClass('.quizHTML/Jade').click(produceTable);
     $('#nameQuiz').text('HTML/Jade Quiz');
+    $('#start').show().click(askQuestion(questions));
 
   }
 

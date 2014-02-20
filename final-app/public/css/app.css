@@ -17,6 +17,7 @@ a:active {
   box-shadow: 0px 0px 15px white;
 }
 table {
+  display: none;
   box-shadow: 0px 0px 15px white;
   border: 1px solid #6e6e6e;
   text-shadow: 0px 0px 5px black;
@@ -102,4 +103,7 @@ body {
 .tftable {
   width: 100%;
   color: black;
+}
+#start {
+  display: none;
 }
