@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Lato:100,200,300);
+@import url(http://fonts.googleapis.com/css?family=Lato:100,200,300,900);
 a {
   padding: 25%;
   text-shadow: 0px 0px 5px black;
@@ -12,23 +12,25 @@ a:active {
   text-shadow: 0px 0px 5px black;
 }
 .breadcrumbs {
-  background: linear-gradient(#999999, #6e6e6e);
-  border: 1px solid #6E6E6E;
-  box-shadow: 0px 0px 15px white;
+  padding: 20px;
+  background: linear-gradient(to right, #999999, transparent);
+  border: transparent;
+  box-shadow: 0px 0px 15px black;
 }
 table {
+  background: linear-gradient(#999999, transparent);
   display: none;
-  box-shadow: 0px 0px 15px white;
-  border: 1px solid #6e6e6e;
+  box-shadow: 0px 0px 15px black;
+  border: transparent;
+  border-radius: 4px;
   text-shadow: 0px 0px 5px black;
   color: white !important;
 }
 tr {
-  background: #6e6e6e !important;
+  background: transparent !important;
 }
 th {
   color: white !important;
-  background: linear-gradient(#999999, #6e6e6e);
 }
 td {
   color: white !important;
@@ -36,10 +38,10 @@ td {
 }
 button.tiny {
   font-family: 'Lato', sans-serif;
-  background: linear-gradient(#999999, #6e6e6e);
-  border: 1px solid #6e6e6e;
+  background: linear-gradient(#999999, transparent);
+  border: transparent;
   border-radius: 4px;
-  box-shadow: 0px 0px 15px white;
+  box-shadow: 0px 0px 15px black;
   color: white;
   text-shadow: 0px 0px 5px black;
   margin: 5px;
@@ -48,36 +50,39 @@ button.tiny:hover {
   text-shadow: 0px 0px 5px white;
 }
 button.tiny:active {
-  background: linear-gradient(#6e6e6e, #999999);
-  border: 1px solid #999999;
+  background: white;
+  border: transparent;
   color: black !important;
   text-shadow: 0px 0px 5px black;
+  box-shadow: 0px 0px 0px black;
 }
 a.button.tiny {
   font-family: 'Lato', sans-serif;
-  background: linear-gradient(#999999, #6e6e6e);
-  border: 1px solid #6e6e6e;
+  background: linear-gradient(to right, #999999, transparent);
+  border: transparent;
   border-radius: 4px;
-  box-shadow: 0px 0px 15px white;
+  box-shadow: 0px 0px 15px black;
   color: white;
   text-shadow: 0px 0px 5px black;
   margin: 5px;
+  float: left;
 }
 a.button.tiny:hover {
   text-shadow: 0px 0px 5px white;
 }
 a.button.tiny:active {
-  background: linear-gradient(#6e6e6e, #999999);
-  border: 1px solid #999999;
+  background: white;
+  border: transparent;
   color: black !important;
   text-shadow: 0px 0px 5px black;
+  box-shadow: 0px 0px 0px white;
 }
 button.tiny.radius {
   font-family: 'Lato', sans-serif;
-  background: linear-gradient(#999999, #6e6e6e);
-  border: 1px solid #6e6e6e;
+  background: linear-gradient(to left, #999999, transparent);
+  border: transparent;
   border-radius: 4px;
-  box-shadow: 0px 0px 5px #999999;
+  box-shadow: 0px 0px 5px black;
   color: white;
   text-shadow: 0px 0px 5px black;
 }
@@ -85,10 +90,19 @@ button.tiny.radius:hover {
   text-shadow: 0px 0px 5px white;
 }
 button.tiny.radius:active {
-  background: linear-gradient(#6e6e6e, #999999);
-  border: 1px solid #999999;
+  background: white;
+  border: transparent;
   color: black !important;
   text-shadow: 0px 0px 5px black;
+}
+input {
+  background: transparent !important;
+  border-radius: 4px !important;
+}
+input:active {
+  background: transparent !important;
+  border-color: black !important;
+  border-radius: 4px !important;
 }
 body {
   background-image: url(/media/neb4.jpg);
@@ -106,4 +120,19 @@ body {
 }
 #start {
   display: none;
+  float: right;
+  background: linear-gradient(to left, #999999, transparent);
+}
+#welcome {
+  background: linear-gradient(#999999, transparent);
+  padding: 40px;
+  border: transparent;
+  box-shadow: 0px 0px 15px black;
+  border-radius: 4px;
+  text-shadow: 0px 0px 5px black;
+  text-align: center;
+}
+h1 {
+  color: white !important;
+  font-family: 'Lato', sans-serif;
 }

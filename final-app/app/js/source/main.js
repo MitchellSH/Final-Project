@@ -66,6 +66,10 @@
   }
 */
 
+  function hideWelcome(){
+    $('#welcome').hide();
+  }
+
   function produceTable(){
     $('#tableQuestions').show();
     $('button.tiny.radius').click();
@@ -78,16 +82,20 @@
   }
   function home(){
     hideItAll();
+    $('#welcome').show();
     $('#search').hide();
     $('#quiz').hide();
   }
   function jqueryMagic(){
+    hideWelcome();
     hideItAll();
     $('#search').text('Search Jquery').show().addClass('.searchJquery');
     $('#quiz').text('Quiz Jquery').show().addClass('.quizJquery').click(produceTable);
     $('#start').show().attr('name','jqueryQuiz').click(chooseQs);
+    $('#nameQuiz').text('Jquery Quiz');
   }
   function htmlMagic(){
+    hideWelcome();
     hideItAll();
     $('#search').text('Search HTML/Jade').show().addClass('.searchHTML/Jade');
     $('#quiz').text('Quiz HTML/Jade').show().addClass('.quizHTML/Jade').click(produceTable);
@@ -97,6 +105,7 @@
   }
 
   function javaMagic(){
+    hideWelcome();
     hideItAll();
     $('#search').text('Search Javascript').show().addClass('.searchJavascript');
     $('#quiz').text('Quiz Javascript').show().addClass('.quizJavascript').click(produceTable);
@@ -104,6 +113,7 @@
   }
 
   function cssMagic(){
+    hideWelcome();
     hideItAll();
     $('#search').text('Search CSS').show().addClass('.searchCSS');
     $('#quiz').text('Quiz CSS').show().addClass('.quizCSS').click(produceTable);
@@ -112,6 +122,7 @@
   }
 
   function lodashMagic(){
+    hideWelcome();
     hideItAll();
     $('#search').text('Search LoDash').show().addClass('.searchLoDash');
     $('#quiz').text('Quiz LoDash').show().addClass('.quizLoDash').click(produceTable);
@@ -119,6 +130,7 @@
   }
 
   function gitMagic(){
+    hideWelcome();
     hideItAll();
     $('#search').text('Search Git').show().addClass('.searchGit');
     $('#quiz').text('Quiz Git').show().addClass('.quizGit').click(produceTable);

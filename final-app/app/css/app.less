@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Lato:100,200,300);
+@import url(http://fonts.googleapis.com/css?family=Lato:100,200,300,900);
 @bg-color: lightblue;
 
 
@@ -20,31 +20,36 @@ a:active{
 
 
 .breadcrumbs{
-  //background: linear-gradient(#FEF3E4, #FEEDD3);
-  //border-color: linear-gradient(#FEF3E4, #FEEDD3);
-  //background: linear-gradient(#62D5FE, #68BEFE);
-  //background: linear-gradient(#DBDBDB, #B3B3B3);
-  background: linear-gradient(#999999, #6E6E6E);
-  border: 1px solid #6E6E6E;
-  box-shadow: 0px 0px 15px white;
+  //background: linear-gradient(#999999, #6E6E6E);
+  //border: 1px solid #6E6E6E;
+  padding: 20px;
+  background: linear-gradient(to right, #999999, transparent);
+  border: transparent;
+  box-shadow: 0px 0px 15px black;
 }
+
 
 table{
   //background: linear-gradient(#62D5FE, #68BEFE) !important;
+  background: linear-gradient(#999999, transparent);
   display: none;
-  box-shadow: 0px 0px 15px white;
-  border: 1px solid #6e6e6e;
+  box-shadow: 0px 0px 15px black;
+  //border: 1px solid #6e6e6e;
+  border: transparent;
+  border-radius: 4px;
   text-shadow: 0px 0px 5px black;
   color: white !important;
 }
 
 tr{
-  background: #6e6e6e !important;
+  //background: #6e6e6e !important;
+  background: transparent !important;
 }
 
 th{
   color: white !important;
-  background: linear-gradient(#999999, #6E6E6E);
+  //background: linear-gradient(#999999, #6E6E6E);
+  //background: transparent !important;
 }
 
 td{
@@ -56,11 +61,13 @@ button.tiny{
   //background: linear-gradient(#0CFE94, #62D5FE);
   font-family: 'Lato', sans-serif;
   //background: linear-gradient(#62D5FE, #68BEFE);
-  background: linear-gradient(#999999, #6E6E6E);
+  //background: linear-gradient(#999999, #6E6E6E);
   //border: 1px solid #FEFAF3;
-  border: 1px solid #6e6e6e;
+  //border: 1px solid #6e6e6e;
+  background: linear-gradient(#999999, transparent);
+  border: transparent;
   border-radius: 4px;
-  box-shadow: 0px 0px 15px white;
+  box-shadow: 0px 0px 15px black;
   color: white;
   text-shadow: 0px 0px 5px black;
   margin: 5px;
@@ -72,47 +79,55 @@ button.tiny:hover{
   text-shadow: 0px 0px 5px white;
 }
 button.tiny:active{
-  background: linear-gradient(#6E6E6E, #999999);
-  border: 1px solid #999999;
+  background: white;
+  border: transparent;
   color: black !important;
   text-shadow: 0px 0px 5px black;
+  box-shadow: 0px 0px 0px black;
 }
 
 a.button.tiny{
   //background: linear-gradient(#0CFE94, #62D5FE);
   font-family: 'Lato', sans-serif;
   //background: linear-gradient(#62D5FE, #68BEFE);
-  background: linear-gradient(#999999, #6E6E6E);
+  //background: linear-gradient(#999999, #6E6E6E);
+  //background: transparent;
+  background: linear-gradient( to right,#999999, transparent);
   //border: 1px solid #FEFAF3;
-  border: 1px solid #6e6e6e;
+  border: transparent;
   border-radius: 4px;
-  box-shadow: 0px 0px 15px white;
+  box-shadow: 0px 0px 15px black;
   color: white;
   text-shadow: 0px 0px 5px black;
   margin: 5px;
+  float: left;
   //position: relative;
-  //left: 325px;
+  //left: 400px;
 
 }
 a.button.tiny:hover{
   text-shadow: 0px 0px 5px white;
 }
 a.button.tiny:active{
-  background: linear-gradient(#6E6E6E, #999999);
-  border: 1px solid #999999;
+  //background: linear-gradient(#6E6E6E, #999999);
+  //border: 1px solid #999999;
+  //text-shadow: 0px 0px 5px black;
+  background: white;
+  border: transparent;
   color: black !important;
   text-shadow: 0px 0px 5px black;
+  box-shadow: 0px 0px 0px white;
 }
 
 button.tiny.radius{
   //background: linear-gradient(#0CFE94, #62D5FE);
   font-family: 'Lato', sans-serif;
   //background: linear-gradient(#62D5FE, #68BEFE);
-  background: linear-gradient(#999999, #6E6E6E);
+  background: linear-gradient(to left, #999999, transparent);
   //border: 1px solid #FEFAF3;
-  border: 1px solid #6e6e6e;
+  border: transparent;
   border-radius: 4px;
-  box-shadow: 0px 0px 5px #999999;
+  box-shadow: 0px 0px 5px black;
   color: white;
   text-shadow: 0px 0px 5px black;
 }
@@ -120,15 +135,25 @@ button.tiny.radius:hover{
   text-shadow: 0px 0px 5px white;
 }
 button.tiny.radius:active{
-  background: linear-gradient(#6E6E6E, #999999);
-  border: 1px solid #999999;
+  //background: linear-gradient(#6E6E6E, #999999);
+  background: white;
+  border: transparent;
   color: black !important;
   text-shadow: 0px 0px 5px black;
 }
 
+input{
+  background: transparent !important;
+  border-radius: 4px !important;
+}
+input:active{
+  background: transparent !important;
+  border-color: black !important;
+  border-radius: 4px !important;
+}
+
 
 body{
-  //background: linear-gradient(to right, #0CFE94, #62D5FE);
   background-image: url(/media/neb4.jpg);
   font-family: 'Lato', sans-serif;
 }
@@ -146,4 +171,30 @@ body{
 
 #start{
   display: none;
+  float: right;
+  background: linear-gradient(to left, #999999, transparent);
 }
+
+
+#welcome{
+  //background: linear-gradient(#FEF3E4, #FEEDD3);
+  //border-color: linear-gradient(#FEF3E4, #FEEDD3);
+  //background: linear-gradient(#62D5FE, #68BEFE);
+  //background: linear-gradient(#DBDBDB, #B3B3B3);
+  //background: linear-gradient(#999999, #6E6E6E);
+  background: linear-gradient(#999999, transparent);
+  //border: 1px solid #6E6E6E;
+  padding: 40px;
+  border: transparent;
+  box-shadow: 0px 0px 15px black;
+  border-radius: 4px;
+  text-shadow: 0px 0px 5px black;
+  text-align: center;
+}
+
+h1{
+  color: white !important;
+  font-family: 'Lato', sans-serif;
+}
+
+

@@ -31,8 +31,14 @@ body
             a(href='#')#git git
 
     .row
+      .medium-12.columns
+        .panel#welcome
+          h1 Welcome To E_Code! 
+
+    .row
       .small-12.columns
         #container
+          button.tiny#start Start Quiz
           a.button.tiny(style='display: none')#search Search
           a.button.tiny(style='display: none')#quiz Quiz
 
@@ -40,7 +46,6 @@ body
       .small-12.columns
         #container2
           #container3
-           button.tiny#start Start Quiz
         table#tableQuestions
           col(style='width: 80%')
           col(style='width: 60%')
