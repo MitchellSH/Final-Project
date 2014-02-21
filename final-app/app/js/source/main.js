@@ -38,33 +38,56 @@
     ['How many pigs are in a hour?', '60']
   ];*/
 
-  
+  var jqueryRandom = _.shuffle(questions);
+ /* var htmljadeRandom = _.shuffle(questions);
+  var java = _.shuffle(questions);
+  var css = _.shuffle(questions);
+  var lodash = _.shuffle(questions);
+  var git = _.shuffle(questions);
+*/
   function chooseQs(){
     var name = $(this).attr('name');
     switch (name){
       case 'jqueryQuiz':
-        askQuestion(questions);
+        askQuestion(jqueryRandom);
+    }
+  }
+  function chooseAs(){
+    var name = $(this).attr('name');
+    switch (name){
+      case 'jqueryAnswer1':
+        answerQuestion(jqueryRandom, 0);
+        break;
+      case 'jqueryAnswer2':
+        answerQuestion(jqueryRandom, 1);
+        break;
+      case 'jqueryAnswer3':
+        answerQuestion(jqueryRandom, 2);
+        break;
+      case 'jqueryAnswer4':
+        answerQuestion(jqueryRandom, 3);
     }
   }
 
-  function askQuestion(x){
-    var array = x;
-    var random = _.shuffle(array);
-    for(var i = 0; i < random.length; i++){
-      $('#q' + i).text(random[i][0]);
-    }
 
+  function askQuestion(array){
+    for(var i = 0; i < array.length; i++){
+      $('#q' + i).text(array[i][0]);
+    }
   }
 
-  /* function answerQuestion(){
-    var qnum = $(this).data('qnum');
-    if($('.answer'+qnum).val()===[qnum][1]){
+  function answerQuestion(newArray, index){
+    if($('.answer' + index).val()===newArray[index][1]){
       alert('right');
-    }else{
+    }
+    else if($('.answer' + index).val()===('')){
+      alert('please answer question');
+    }
+    else
+    {
       alert('wrong');
     }
   }
-*/
 
   function hideWelcome(){
     $('#welcome').hide();
@@ -72,8 +95,7 @@
 
   function produceTable(){
     $('#tableQuestions').show();
-    $('button.tiny.radius').click();
-   // $('#start').show();
+    $('#start').show().text('New Quiz');
   }
 
   function hideItAll(){
@@ -90,9 +112,13 @@
     hideWelcome();
     hideItAll();
     $('#search').text('Search Jquery').show().addClass('.searchJquery');
-    $('#quiz').text('Quiz Jquery').show().addClass('.quizJquery').click(produceTable);
-    $('#start').show().attr('name','jqueryQuiz').click(chooseQs);
+    $('#quiz').text('Quiz Jquery').show().addClass('.quizJquery').click(produceTable).attr('name', 'jqueryQuiz').click(chooseQs);
+    $('#start').attr('name','jqueryQuiz').click();
     $('#nameQuiz').text('Jquery Quiz');
+    $('.submit1').attr('name', 'jqueryAnswer1').click(chooseAs);
+    $('.submit2').attr('name', 'jqueryAnswer2').click(chooseAs);
+    $('.submit3').attr('name', 'jqueryAnswer3').click(chooseAs);
+    $('.submit4').attr('name', 'jqueryAnswer4').click(chooseAs);
   }
   function htmlMagic(){
     hideWelcome();

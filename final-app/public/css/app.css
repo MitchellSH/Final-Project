@@ -77,7 +77,7 @@ a.button.tiny:active {
   text-shadow: 0px 0px 5px black;
   box-shadow: 0px 0px 0px white;
 }
-button.tiny.radius {
+button.tiny.radius.submit {
   font-family: 'Lato', sans-serif;
   background: linear-gradient(to left, #999999, transparent);
   border: transparent;
@@ -86,10 +86,10 @@ button.tiny.radius {
   color: white;
   text-shadow: 0px 0px 5px black;
 }
-button.tiny.radius:hover {
+button.tiny.radius.submit:hover {
   text-shadow: 0px 0px 5px white;
 }
-button.tiny.radius:active {
+button.tiny.radius.submit:active {
   background: white;
   border: transparent;
   color: black !important;
@@ -122,6 +122,9 @@ body {
   display: none;
   float: right;
   background: linear-gradient(to left, #999999, transparent);
+}
+#start:active {
+  background: white !important;
 }
 #welcome {
   background: linear-gradient(#999999, transparent);
