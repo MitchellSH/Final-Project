@@ -113,7 +113,7 @@
     hideItAll();
     $('#search').text('Search Jquery').show().addClass('.searchJquery');
     $('#quiz').text('Quiz Jquery').show().addClass('.quizJquery').click(produceTable).attr('name', 'jqueryQuiz').click(chooseQs);
-    $('#start').attr('name','jqueryQuiz').click();
+    $('#start').attr('name','jqueryQuiz').click(chooseQs);
     $('#nameQuiz').text('Jquery Quiz');
     $('.submit1').attr('name', 'jqueryAnswer1').click(chooseAs);
     $('.submit2').attr('name', 'jqueryAnswer2').click(chooseAs);
@@ -126,7 +126,7 @@
     $('#search').text('Search HTML/Jade').show().addClass('.searchHTML/Jade');
     $('#quiz').text('Quiz HTML/Jade').show().addClass('.quizHTML/Jade').click(produceTable);
     $('#nameQuiz').text('HTML/Jade Quiz');
-    $('#start').show().click(askQuestion(questions));
+    //$('#start').show().click(askQuestion(questions));
 
   }
 
