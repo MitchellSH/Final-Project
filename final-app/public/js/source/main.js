@@ -39,12 +39,14 @@
   ];*/
 
   var jqueryRandom = _.shuffle(questions);
+
  /* var htmljadeRandom = _.shuffle(questions);
   var java = _.shuffle(questions);
   var css = _.shuffle(questions);
   var lodash = _.shuffle(questions);
   var git = _.shuffle(questions);
 */
+
   function chooseQs(){
     var name = $(this).attr('name');
     switch (name){
@@ -112,7 +114,7 @@
     hideWelcome();
     hideItAll();
     $('#search').text('Search Jquery').show().addClass('.searchJquery');
-    $('#quiz').text('Quiz Jquery').show().addClass('.quizJquery').click(produceTable).attr('name', 'jqueryQuiz').click(chooseQs);
+    $('#quiz').text('Quiz Jquery').show().addClass('.quizJquery').click(produceTable).attr('name', 'jqueryQuiz');
     $('#start').attr('name','jqueryQuiz').click(chooseQs);
     $('#nameQuiz').text('Jquery Quiz');
     $('.submit1').attr('name', 'jqueryAnswer1').click(chooseAs);
