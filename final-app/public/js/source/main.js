@@ -56,41 +56,8 @@
         break;
       case 'jqueryQuiz':
         askQuestion(questions);
-
-    }
- /* var htmljadeRandom = _.shuffle(b);
-  var java = _.shuffle(c);
-  var css = _.shuffle(d);
-  var lodash = _.shuffle(e);
-  var git = _.shuffle(f);
-  */
-
-  }
- /* function chooseQs(){
-    var name = $(this).attr('name');
-    switch (name){
-      case 'jqueryQuiz':
-        askQuestion();
     }
   }
-  *//*
-  function chooseAs(){
-    var name = $(this).attr('name');
-    switch (name){
-      case 'jqueryAnswer1':
-        answerQuestion();
-        break;
-      case 'jqueryAnswer2':
-        answerQuestion();
-        break;
-      case 'jqueryAnswer3':
-        answerQuestion();
-        break;
-      case 'jqueryAnswer4':
-        answerQuestion();
-    }
-  }
-*/
 
   function askQuestion(passedInArray){
     var array = _.shuffle(passedInArray);
