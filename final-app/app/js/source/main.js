@@ -14,7 +14,7 @@
     $('#lodash').click(lodashMagic);
     $('#git').click(gitMagic);
   }
-
+  var answers = [];
 
   var questions = [
     ['flkdsajdlka;dfldsfaj', '12'],
@@ -38,48 +38,70 @@
     ['How many pigs are in a hour?', '60']
   ];*/
 
-  var jqueryRandom = _.shuffle(questions);
 
- /* var htmljadeRandom = _.shuffle(questions);
-  var java = _.shuffle(questions);
-  var css = _.shuffle(questions);
-  var lodash = _.shuffle(questions);
-  var git = _.shuffle(questions);
-*/
+  function routeArrays(){
+    var name = $(this).attr('name');
+    switch (name){
+      case 'jqueryAnswer1':
+        answerQuestion(answers, 0);
+        break;
+      case 'jqueryAnswer2':
+        answerQuestion(answers, 1);
+        break;
+      case 'jqueryAnswer3':
+        answerQuestion(answers, 2);
+        break;
+      case 'jqueryAnswer4':
+        answerQuestion(answers, 3);
+        break;
+      case 'jqueryQuiz':
+        askQuestion(questions);
 
-  function chooseQs(){
+    }
+ /* var htmljadeRandom = _.shuffle(b);
+  var java = _.shuffle(c);
+  var css = _.shuffle(d);
+  var lodash = _.shuffle(e);
+  var git = _.shuffle(f);
+  */
+
+  }
+ /* function chooseQs(){
     var name = $(this).attr('name');
     switch (name){
       case 'jqueryQuiz':
-        askQuestion(jqueryRandom);
+        askQuestion();
     }
   }
+  *//*
   function chooseAs(){
     var name = $(this).attr('name');
     switch (name){
       case 'jqueryAnswer1':
-        answerQuestion(jqueryRandom, 0);
+        answerQuestion();
         break;
       case 'jqueryAnswer2':
-        answerQuestion(jqueryRandom, 1);
+        answerQuestion();
         break;
       case 'jqueryAnswer3':
-        answerQuestion(jqueryRandom, 2);
+        answerQuestion();
         break;
       case 'jqueryAnswer4':
-        answerQuestion(jqueryRandom, 3);
+        answerQuestion();
     }
   }
+*/
 
-
-  function askQuestion(array){
+  function askQuestion(passedInArray){
+    var array = _.shuffle(passedInArray);
     for(var i = 0; i < array.length; i++){
       $('#q' + i).text(array[i][0]);
+      answers.push(array[i][1]);
     }
   }
 
   function answerQuestion(newArray, index){
-    if($('.answer' + index).val()===newArray[index][1]){
+    if($('.answer' + index).val()===newArray[index]){
       alert('right');
     }
     else if($('.answer' + index).val()===('')){
@@ -115,12 +137,12 @@
     hideItAll();
     $('#search').text('Search Jquery').show().addClass('.searchJquery');
     $('#quiz').text('Quiz Jquery').show().addClass('.quizJquery').click(produceTable).attr('name', 'jqueryQuiz');
-    $('#start').attr('name','jqueryQuiz').click(chooseQs);
+    $('#start').attr('name','jqueryQuiz').click(routeArrays);
     $('#nameQuiz').text('Jquery Quiz');
-    $('.submit1').attr('name', 'jqueryAnswer1').click(chooseAs);
-    $('.submit2').attr('name', 'jqueryAnswer2').click(chooseAs);
-    $('.submit3').attr('name', 'jqueryAnswer3').click(chooseAs);
-    $('.submit4').attr('name', 'jqueryAnswer4').click(chooseAs);
+    $('.submit1').attr('name', 'jqueryAnswer1').click(routeArrays);
+    $('.submit2').attr('name', 'jqueryAnswer2').click(routeArrays);
+    $('.submit3').attr('name', 'jqueryAnswer3').click(routeArrays);
+    $('.submit4').attr('name', 'jqueryAnswer4').click(routeArrays);
   }
   function htmlMagic(){
     hideWelcome();
