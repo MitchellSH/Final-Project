@@ -80,11 +80,16 @@
     }
   }
 
-  function hideWelcome(){
-    $('#welcome').hide();
+  //function hideWelcome(){
+    //$('#welcome').hide();
+  //}
+
+  function hideBlocks(){
+    $('.scrollblock').hide();
   }
 
   function produceTable(){
+    //hideWelcome();
     $('#tableQuestions').show();
     $('#start').show().text('New Quiz');
   }
@@ -94,64 +99,90 @@
     $('#tableQuestions').hide();
   }
   function home(){
+    $('.scrollblock').show();
     hideItAll();
-    $('#welcome').show();
-    $('#search').hide();
-    $('#quiz').hide();
+    $('#header').text('Welcome To E_Code!');
+    $('#sub-header').text('Helping You To Learn.');
+    $('#sub-header2').text('');
+    //$('#search').hide();
+    //$('#quiz').hide();
   }
   function jqueryMagic(){
-    hideWelcome();
+    hideBlocks();
+    //hideWelcome();
     hideItAll();
-    $('#search').text('Search Jquery').show().addClass('.searchJquery');
-    $('#quiz').text('Quiz Jquery').show().addClass('.quizJquery').click(produceTable).attr('name', 'jqueryQuiz');
+    $('#searchJQ').text('Search Jquery').show().addClass('.searchJquery');
+    $('#quizJQ').text('Quiz Jquery').show().addClass('.quizJquery').click(produceTable).attr('name', 'jqueryQuiz');
     $('#start').attr('name','jqueryQuiz').click(routeArrays);
     $('#nameQuiz').text('Jquery Quiz');
+    $('#header').text('Jquery');
+    $('#sub-header').text('Jquery simplifies HTML document traversing, event handling, animating, and Ajax interactions for rapid web development.');
+    $('#sub-header2').text('');
     $('.submit1').attr('name', 'jqueryAnswer1').click(routeArrays);
     $('.submit2').attr('name', 'jqueryAnswer2').click(routeArrays);
     $('.submit3').attr('name', 'jqueryAnswer3').click(routeArrays);
     $('.submit4').attr('name', 'jqueryAnswer4').click(routeArrays);
   }
   function htmlMagic(){
-    hideWelcome();
+    hideBlocks();
+    //hideWelcome();
     hideItAll();
-    $('#search').text('Search HTML/Jade').show().addClass('.searchHTML/Jade');
-    $('#quiz').text('Quiz HTML/Jade').show().addClass('.quizHTML/Jade').click(produceTable);
+    $('#searchHJ').text('Search HTML/Jade').show().addClass('.searchHTML/Jade');
+    $('#quizHJ').text('Quiz HTML/Jade').show().addClass('.quizHTML/Jade').click(produceTable);
     $('#nameQuiz').text('HTML/Jade Quiz');
-    //$('#start').show().click(askQuestion(questions));
+    $('#header').text('HTML/JADE');
+    $('#sub-header').text('HTML is the unversal markup language for the Web.');
+    $('#sub-header2').text('HTML lets you format text, graphics, links, inputs, etc. and save it all in a text file that will display in your browser.');
 
   }
 
   function javaMagic(){
-    hideWelcome();
+    hideBlocks();
+    //hideWelcome();
     hideItAll();
-    $('#search').text('Search Javascript').show().addClass('.searchJavascript');
-    $('#quiz').text('Quiz Javascript').show().addClass('.quizJavascript').click(produceTable);
+    $('#searchJS').text('Search Javascript').show().addClass('.searchJavascript');
+    $('#quizJS').text('Quiz Javascript').show().addClass('.quizJavascript').click(produceTable);
     $('#nameQuiz').text('Java Quiz');
+    $('#header').text('Javascript');
+    $('#sub-header').text('JavaScript is a lightweight, interpreted programming language with object-oriented capabilities that allows you to build interactivity into otherwise static HTML pages.');
+    $('#sub-header2').text('');
   }
 
   function cssMagic(){
-    hideWelcome();
+    hideBlocks();
+   // hideWelcome();
     hideItAll();
-    $('#search').text('Search CSS').show().addClass('.searchCSS');
-    $('#quiz').text('Quiz CSS').show().addClass('.quizCSS').click(produceTable);
+    $('#searchCSS').text('Search CSS').show().addClass('.searchCSS');
+    $('#quizCSS').text('Quiz CSS').show().addClass('.quizCSS').click(produceTable);
     $('#nameQuiz').text('CSS Quiz');
+    $('#header').text('CSS');
+    $('#sub-header').text('The styling and design of your HTML.');
+    $('#sub-header2').text('');
 
   }
 
   function lodashMagic(){
-    hideWelcome();
+    hideBlocks();
+    //hideWelcome();
     hideItAll();
-    $('#search').text('Search LoDash').show().addClass('.searchLoDash');
-    $('#quiz').text('Quiz LoDash').show().addClass('.quizLoDash').click(produceTable);
+    $('#searchLD').text('Search LoDash').show().addClass('.searchLoDash');
+    $('#quizLD').text('Quiz LoDash').show().addClass('.quizLoDash').click(produceTable);
     $('#nameQuiz').text('LoDash Quiz');
+    $('#header').text('Lo-Dash');
+    $('#sub-header').text('A utility library delivering consistency, customization, performance, & extras.');
+    $('#sub-header2').text('');
   }
 
   function gitMagic(){
-    hideWelcome();
+    hideBlocks();
+    //hideWelcome();
     hideItAll();
-    $('#search').text('Search Git').show().addClass('.searchGit');
-    $('#quiz').text('Quiz Git').show().addClass('.quizGit').click(produceTable);
+    $('#searchG').text('Search Git').show().addClass('.searchGit');
+    $('#quizG').text('Quiz Git').show().addClass('.quizGit').click(produceTable);
     $('#nameQuiz').text('Git Quiz');
+    $('#header').text('Git');
+    $('#sub-header').text('In software development, Git is a distributed revision control and source code management (SCM) system with an emphasis on speed.');
+    $('#sub-header2').text('');
   }
 
 })();

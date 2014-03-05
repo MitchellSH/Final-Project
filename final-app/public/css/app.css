@@ -1,8 +1,9 @@
-@import url(http://fonts.googleapis.com/css?family=Lato:100,200,300,900);
+@import url(http://fonts.googleapis.com/css?family=Lato:100);
 a {
-  padding: 25%;
   text-shadow: 0px 0px 5px black;
   color: white !important;
+  background: linear-gradient(#d3d3d3, #808080) !important;
+  font-family: 'Lato', sans-serif !important;
 }
 a:hover {
   text-shadow: 0px 0px 5px white;
@@ -10,23 +11,32 @@ a:hover {
 a:active {
   color: black !important;
   text-shadow: 0px 0px 5px black;
+  background: linear-gradient(#808080, #d3d3d3) !important;
 }
-.breadcrumbs {
-  padding: 20px;
-  margin-top: 10px;
-  background: linear-gradient(to right, #999999, transparent);
+.search,
+.quiz {
+  background: grey !important;
+  font-family: 'Lato', sans-serif;
+  padding: 3px !important;
+}
+.dropdown {
+  box-shadow: 0px 0px 15px grey !important;
+}
+.top-bar {
   border: transparent;
+  font-family: 'Lato', sans-serif;
+  background: linear-gradient(#d3d3d3, #808080) !important;
   box-shadow: 0px 0px 15px black;
 }
-table {
-  background: linear-gradient(#999999, transparent);
+#tableQuestions {
+  background: linear-gradient(#d3d3d3, #808080) !important;
   display: none;
-  box-shadow: 0px 0px 15px black;
+  box-shadow: 0px 0px 5px black;
   border: transparent;
-  border-radius: 4px;
   text-shadow: 0px 0px 5px black;
   color: white !important;
   padding-top: 50px !important;
+  border-radius: 4px;
 }
 #container2 {
   padding-top: 20px !important;
@@ -41,62 +51,21 @@ td {
   color: white !important;
   text-shadow: 0px 0px 5px black;
 }
-button.tiny {
-  font-family: 'Lato', sans-serif;
-  background: linear-gradient(#999999, transparent);
-  border: transparent;
-  border-radius: 4px;
-  box-shadow: 0px 0px 15px black;
-  color: white;
-  text-shadow: 0px 0px 5px black;
-  margin: 5px;
-}
-button.tiny:hover {
-  text-shadow: 0px 0px 5px white;
-}
-button.tiny:active {
-  background: white;
-  border: transparent;
-  color: black !important;
-  text-shadow: 0px 0px 5px black;
-  box-shadow: 0px 0px 0px black;
-}
-a.button.tiny {
-  font-family: 'Lato', sans-serif;
-  background: linear-gradient(to right, #999999, transparent);
-  border: transparent;
-  border-radius: 4px;
-  box-shadow: 0px 0px 15px black;
-  color: white;
-  text-shadow: 0px 0px 5px black;
-  margin: 5px;
-  float: left;
-}
-a.button.tiny:hover {
-  text-shadow: 0px 0px 5px white;
-}
-a.button.tiny:active {
-  background: white;
-  border: transparent;
-  color: black !important;
-  text-shadow: 0px 0px 5px black;
-  box-shadow: 0px 0px 0px white;
-}
 button.tiny.radius {
   font-family: 'Lato', sans-serif;
-  background: linear-gradient(transparent, #6e6e6e);
-  border: transparent;
+  background: transparent;
+  border: 1px solid lightgrey;
   border-radius: 4px;
-  box-shadow: 0px 0px 3px black;
   color: white;
   text-shadow: 0px 0px 5px black;
 }
 button.tiny.radius:hover {
   text-shadow: 0px 0px 5px white;
+  border: 1px solid white;
 }
 button.tiny.radius:active {
   background: white;
-  border: transparent;
+  border: 1px solid white;
   color: black !important;
   text-shadow: 0px 0px 5px black;
 }
@@ -110,14 +79,16 @@ input:active {
   border-radius: 4px !important;
 }
 body {
-  background-image: url(/media/neb4.jpg);
+  background-image: url(/media/CR2.jpg);
   font-family: 'Lato', sans-serif;
 }
 #ecode {
-  font-family: 'Lato', sans-serif;
-  text-align: center;
   color: white !important;
-  text-shadow: 0px 1px 0px black;
+  text-shadow: 0px 0px 5px black;
+  outline: none;
+}
+#ecode:active {
+  background: linear-gradient(#d3d3d3, #808080) !important;
 }
 .tftable {
   width: 100%;
@@ -126,21 +97,85 @@ body {
 #start {
   display: none;
   float: right;
-  background: linear-gradient(to left, #999999, transparent);
+  background: linear-gradient(#d3d3d3, #808080) !important;
+  border-radius: 4px;
+  font-family: 'Lato', sans-serif;
+  text-shadow: 0px 0px 5px black;
+  box-shadow: 0px 0px 2px black;
+}
+#start:hover {
+  text-shadow: 0px 0px 5px white;
 }
 #start:active {
-  background: white !important;
+  background: linear-gradient(#808080, #d3d3d3) !important;
+  box-shadow: 0px 0px 1px black;
 }
 #welcome {
-  background: linear-gradient(#999999, transparent);
-  padding: 40px;
+  background: transparent;
+  padding: 20px;
+  margin-top: 10px;
+  border: transparent;
+  text-shadow: 0px 0px 15px black;
+  text-align: center;
+}
+/*.panel{
+  //background: linear-gradient(#999999, transparent);
+  background: transparent;
+  padding: 80px;
+  margin-top: 10px;
   border: transparent;
   box-shadow: 0px 0px 15px black;
-  border-radius: 4px;
   text-shadow: 0px 0px 5px black;
   text-align: center;
+}*/
+#sub-header,
+#sub-header2 {
+  color: black !important;
+  font-family: 'Lato', sans-serif;
+  text-shadow: 0px 0px 10px white;
 }
 h1 {
   color: white !important;
   font-family: 'Lato', sans-serif;
 }
+h2 {
+  color: white !important;
+  font-family: 'Lato', sans-serif;
+  text-align: center;
+}
+h3 {
+  color: white !important;
+  font-family: 'Lato', sans-serif;
+  text-align: center;
+}
+/*
+h4{
+  color: white !important;
+  font-family: 'Lato', sans-serif;
+}
+
+.scrollblock{
+  position: relative;
+  margin: 0;
+  height: 600px;
+  width: 1280px;
+  padding: 100px;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  color: white !important;
+  text-shadow: 0px 0px 5px black;
+  text-align: center;
+}
+
+//#slide1{
+  //background: lightblue !important;
+  //background-image: url(/media/CR3.jpg);
+//}
+#slide2{
+  //background: lightgreen !important;
+  background-image: url(/media/CR4.jpg);
+}
+#slide3{
+  //background: lightyellow !important;
+  background-image: url(/media/CR5.jpg);
+}*/

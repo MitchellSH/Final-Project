@@ -1,11 +1,13 @@
-@import url(http://fonts.googleapis.com/css?family=Lato:100,200,300,900);
-@bg-color: lightblue;
+@import url(http://fonts.googleapis.com/css?family=Lato:100);
+@topbar-background: linear-gradient(to right, #999999, transparent);
+@topbar-link-color: transparent;
 
 
 a{
-  padding: 25%;
   text-shadow: 0px 0px 5px black;
   color: white !important;
+  background: linear-gradient(lightgrey, grey) !important;
+  font-family: 'Lato', sans-serif !important;
 }
 
 a:hover{
@@ -15,31 +17,45 @@ a:hover{
 a:active{
   color: black !important;
   text-shadow: 0px 0px 5px black;
+  background: linear-gradient(grey, lightgrey) !important;
 }
 
+.search, .quiz{
+  //background: linear-gradient(to right, lightgrey, grey) !important;
+  background: grey !important;
+  font-family: 'Lato', sans-serif;
+  padding: 3px !important;
+}
+.search:active{
+}
 
-.breadcrumbs{
-  //background: linear-gradient(#999999, #6E6E6E);
-  //border: 1px solid #6E6E6E;
-  padding: 20px;
-  margin-top: 10px;
-  background: linear-gradient(to right, #999999, transparent);
+.quiz:active{
+}
+
+.dropdown{
+  box-shadow: 0px 0px 15px grey !important;
+}
+
+.top-bar{
   border: transparent;
+  font-family: 'Lato', sans-serif;
+  background: linear-gradient(lightgrey, grey) !important;
   box-shadow: 0px 0px 15px black;
 }
 
 
-table{
-  //background: linear-gradient(#62D5FE, #68BEFE) !important;
-  background: linear-gradient(#999999, transparent);
+#tableQuestions{
+  background: linear-gradient(lightgrey, grey) !important;
+  //background: linear-gradient(#999999, transparent);
+  //background: transparent;
   display: none;
-  box-shadow: 0px 0px 15px black;
+  box-shadow: 0px 0px 5px black;
   //border: 1px solid #6e6e6e;
   border: transparent;
-  border-radius: 4px;
   text-shadow: 0px 0px 5px black;
   color: white !important;
   padding-top: 50px !important;
+  border-radius: 4px;
 }
 
 #container2{
@@ -62,87 +78,28 @@ td{
   text-shadow: 0px 0px 5px black;
 }
 
-button.tiny{
-  //background: linear-gradient(#0CFE94, #62D5FE);
-  font-family: 'Lato', sans-serif;
-  //background: linear-gradient(#62D5FE, #68BEFE);
-  //background: linear-gradient(#999999, #6E6E6E);
-  //border: 1px solid #FEFAF3;
-  //border: 1px solid #6e6e6e;
-  background: linear-gradient(#999999, transparent);
-  border: transparent;
-  border-radius: 4px;
-  box-shadow: 0px 0px 15px black;
-  color: white;
-  text-shadow: 0px 0px 5px black;
-  margin: 5px;
-  //position: relative;
-  //left: 325px;
-
-}
-button.tiny:hover{
-  text-shadow: 0px 0px 5px white;
-}
-button.tiny:active{
-  background: white;
-  border: transparent;
-  color: black !important;
-  text-shadow: 0px 0px 5px black;
-  box-shadow: 0px 0px 0px black;
-}
-
-a.button.tiny{
-  //background: linear-gradient(#0CFE94, #62D5FE);
-  font-family: 'Lato', sans-serif;
-  //background: linear-gradient(#62D5FE, #68BEFE);
-  //background: linear-gradient(#999999, #6E6E6E);
-  //background: transparent;
-  background: linear-gradient( to right,#999999, transparent);
-  //border: 1px solid #FEFAF3;
-  border: transparent;
-  border-radius: 4px;
-  box-shadow: 0px 0px 15px black;
-  color: white;
-  text-shadow: 0px 0px 5px black;
-  margin: 5px;
-  float: left;
-  //position: relative;
-  //left: 400px;
-
-}
-a.button.tiny:hover{
-  text-shadow: 0px 0px 5px white;
-}
-a.button.tiny:active{
-  //background: linear-gradient(#6E6E6E, #999999);
-  //border: 1px solid #999999;
-  //text-shadow: 0px 0px 5px black;
-  background: white;
-  border: transparent;
-  color: black !important;
-  text-shadow: 0px 0px 5px black;
-  box-shadow: 0px 0px 0px white;
-}
 
 button.tiny.radius{
   //background: linear-gradient(#0CFE94, #62D5FE);
   font-family: 'Lato', sans-serif;
   //background: linear-gradient(#62D5FE, #68BEFE);
-  background: linear-gradient(transparent, #6e6e6e);
+  //background: linear-gradient(transparent, #6e6e6e);
   //border: 1px solid #FEFAF3;
-  border: transparent;
+  background: transparent;
+  border: 1px solid lightgrey;
   border-radius: 4px;
-  box-shadow: 0px 0px 3px black;
+  //box-shadow: 0px 0px 3px black;
   color: white;
   text-shadow: 0px 0px 5px black;
 }
 button.tiny.radius:hover{
   text-shadow: 0px 0px 5px white;
+  border: 1px solid white;
 }
 button.tiny.radius:active{
   //background: linear-gradient(#6E6E6E, #999999);
   background: white;
-  border: transparent;
+  border: 1px solid white;
   color: black !important;
   text-shadow: 0px 0px 5px black;
 }
@@ -159,15 +116,24 @@ input:active{
 
 
 body{
-  background-image: url(/media/neb4.jpg);
+  background-image: url(/media/CR2.jpg);
+  //background: linear-gradient(to right,#0CFE94, #62D5FE);
+  //background: linear-gradient(to right, #6E6E6E, #999999);
+  //background: linear-gradient(to right, #62D5FE, #68BEFE) !important;
+  //background-position: center;
   font-family: 'Lato', sans-serif;
 }
 
+
 #ecode{
-  font-family: 'Lato', sans-serif;
-  text-align: center;
   color: white !important;
-  text-shadow: 0px 1px 0px black;
+  text-shadow: 0px 0px 5px black;
+  outline: none;
+}
+#ecode:hover{
+}
+#ecode:active{
+  background: linear-gradient(lightgrey, grey) !important;
 }
 .tftable{
   width: 100%;
@@ -177,28 +143,50 @@ body{
 #start{
   display: none;
   float: right;
-  background: linear-gradient(to left, #999999, transparent);
+  background: linear-gradient(lightgrey, grey) !important;
+  //background: transparent;
+  //border: 1px solid grey;
+  border-radius: 4px;
+  font-family: 'Lato', sans-serif;
+  text-shadow: 0px 0px 5px black;
+  box-shadow: 0px 0px 2px black;
+}
+#start:hover{
+  //border: 1px solid lightgrey;
+  text-shadow: 0px 0px 5px white;
 }
 
 #start:active{
-  background: white !important;
+  background: linear-gradient(grey, lightgrey) !important;
+  box-shadow: 0px 0px 1px black;
 }
 
 
 #welcome{
-  //background: linear-gradient(#FEF3E4, #FEEDD3);
-  //border-color: linear-gradient(#FEF3E4, #FEEDD3);
-  //background: linear-gradient(#62D5FE, #68BEFE);
-  //background: linear-gradient(#DBDBDB, #B3B3B3);
-  //background: linear-gradient(#999999, #6E6E6E);
-  background: linear-gradient(#999999, transparent);
-  //border: 1px solid #6E6E6E;
-  padding: 40px;
+  //background: linear-gradient(#999999, transparent);
+  background: transparent;
+  padding: 20px;
+  margin-top: 10px;
+  border: transparent;
+ // box-shadow: 0px 0px 15px black;
+  text-shadow: 0px 0px 15px black;
+  text-align: center;
+}
+/*.panel{
+  //background: linear-gradient(#999999, transparent);
+  background: transparent;
+  padding: 80px;
+  margin-top: 10px;
   border: transparent;
   box-shadow: 0px 0px 15px black;
-  border-radius: 4px;
   text-shadow: 0px 0px 5px black;
   text-align: center;
+}*/
+
+#sub-header, #sub-header2{
+  color: black !important;
+  font-family: 'Lato', sans-serif;
+  text-shadow: 0px 0px 10px white;
 }
 
 
@@ -206,5 +194,46 @@ h1{
   color: white !important;
   font-family: 'Lato', sans-serif;
 }
+
+h2{
+  color: white !important;
+  font-family: 'Lato', sans-serif;
+  text-align: center;
+}
+h3{
+  color: white !important;
+  font-family: 'Lato', sans-serif;
+  text-align: center;
+}/*
+h4{
+  color: white !important;
+  font-family: 'Lato', sans-serif;
+}
+
+.scrollblock{
+  position: relative;
+  margin: 0;
+  height: 600px;
+  width: 1280px;
+  padding: 100px;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  color: white !important;
+  text-shadow: 0px 0px 5px black;
+  text-align: center;
+}
+
+//#slide1{
+  //background: lightblue !important;
+  //background-image: url(/media/CR3.jpg);
+//}
+#slide2{
+  //background: lightgreen !important;
+  background-image: url(/media/CR4.jpg);
+}
+#slide3{
+  //background: lightyellow !important;
+  background-image: url(/media/CR5.jpg);
+}*/
 
 
