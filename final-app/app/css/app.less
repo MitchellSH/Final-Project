@@ -2,11 +2,91 @@
 @topbar-background: linear-gradient(to right, #999999, transparent);
 @topbar-link-color: transparent;
 
+//#mitch{
+  //border: 2px solid white;
+  //border-radius: 5px;
+  //box-shadow: 0px 0px 15px black;
+  //float: left;
+//}
+
+.front{
+  //background-image: url('/media/zim2.png');
+  width: 250px;
+  height: 250px;
+  border: 2px solid white;
+  border-radius: 5px;
+  box-shadow: 0px 0px 15px white;
+  float: left;
+}
+
+.back{
+  background: transparent;
+  width: 250px;
+  height: 250px;
+}
+
+#lauren{
+  border: 2px solid white;
+  border-radius: 5px;
+  box-shadow: 0px 0px 15px white;
+  float: right;
+}
+
+#m{
+  text-shadow: 0px 1px 5px black;
+  color: white !important;
+  float: left;
+
+}
+
+#l{
+  text-shadow: 0px 1px 5px black;
+  color: white !important;
+  float: right;
+}
+
+.hidden{
+  display: none;
+  background: transparent;
+}
+
+#mitch:hover{
+  box-shadow: 0px 0px 15px black;
+}
+
+#lauren:hover{
+  box-shadow: 0px 0px 15px black;
+}
+
+i{
+  color: white;
+  margin: 4px;
+}
+
+.links{
+  background: transparent !important;
+  text-shadow: 0px 0px 5px grey;
+}
+
+.links:hover{
+  background: transparent !important;
+  text-shadow: 0px 0px 5px black;
+}
+
+.links:active{
+  background: transparent !important;
+  text-shadow: 0px 0px 5px white;
+}
+
+//#home{
+  //text-shadow: 0px 0px 5px black;
+//}
+
 
 a{
   text-shadow: 0px 0px 5px black;
   color: white !important;
-  background: linear-gradient(lightgrey, grey) !important;
+  background: linear-gradient(#a1a1a1, grey) !important;
   font-family: 'Lato', sans-serif !important;
 }
 
@@ -17,7 +97,7 @@ a:hover{
 a:active{
   color: black !important;
   text-shadow: 0px 0px 5px black;
-  background: linear-gradient(grey, lightgrey) !important;
+  background: linear-gradient(grey, #a1a1a1) !important;
 }
 
 .search, .quiz{
@@ -27,9 +107,11 @@ a:active{
   padding: 3px !important;
 }
 .search:active{
+  background: linear-gradient(grey, #a1a1a1) !important;
 }
 
 .quiz:active{
+  background: linear-gradient(grey, #a1a1a1) !important;
 }
 
 .dropdown{
@@ -39,13 +121,18 @@ a:active{
 .top-bar{
   border: transparent;
   font-family: 'Lato', sans-serif;
-  background: linear-gradient(lightgrey, grey) !important;
+  background: linear-gradient(#a1a1a1, grey) !important;
   box-shadow: 0px 0px 15px black;
+}
+
+#orbit{
+  font-family: 'Lato', sans-serif;
+  //text-shadow: 0px 0px 15px black;
 }
 
 
 #tableQuestions{
-  background: linear-gradient(lightgrey, grey) !important;
+  background: linear-gradient(#A1A1A1, grey) !important;
   //background: linear-gradient(#999999, transparent);
   //background: transparent;
   display: none;
@@ -116,7 +203,7 @@ input:active{
 
 
 body{
-  background-image: url(/media/CR2.jpg);
+  background-image: url(/media/BG2.jpg);
   //background: linear-gradient(to right,#0CFE94, #62D5FE);
   //background: linear-gradient(to right, #6E6E6E, #999999);
   //background: linear-gradient(to right, #62D5FE, #68BEFE) !important;
@@ -131,10 +218,11 @@ body{
   outline: none;
 }
 #ecode:hover{
+  text-shadow: 0px 0px 5px white;
 }
-#ecode:active{
-  background: linear-gradient(lightgrey, grey) !important;
-}
+//#ecode:active{
+  //background: linear-gradient(lightgrey, grey) !important;
+//}
 .tftable{
   width: 100%;
   color: black;
@@ -143,7 +231,7 @@ body{
 #start{
   display: none;
   float: right;
-  background: linear-gradient(lightgrey, grey) !important;
+  background: linear-gradient(#a1a1a1, grey) !important;
   //background: transparent;
   //border: 1px solid grey;
   border-radius: 4px;
@@ -157,12 +245,12 @@ body{
 }
 
 #start:active{
-  background: linear-gradient(grey, lightgrey) !important;
+  background: linear-gradient(grey, #a1a1a1) !important;
   box-shadow: 0px 0px 1px black;
 }
 
 
-#welcome{
+#welcome,#about{
   //background: linear-gradient(#999999, transparent);
   background: transparent;
   padding: 20px;
@@ -172,21 +260,14 @@ body{
   text-shadow: 0px 0px 15px black;
   text-align: center;
 }
-/*.panel{
-  //background: linear-gradient(#999999, transparent);
-  background: transparent;
-  padding: 80px;
-  margin-top: 10px;
-  border: transparent;
-  box-shadow: 0px 0px 15px black;
-  text-shadow: 0px 0px 5px black;
-  text-align: center;
-}*/
 
-#sub-header, #sub-header2{
-  color: black !important;
+.list:hover{
+}
+
+#sub-header, #sub-header2, p{
+  color: white !important;
   font-family: 'Lato', sans-serif;
-  text-shadow: 0px 0px 10px white;
+  text-shadow: 0px 0px 10px black;
 }
 
 

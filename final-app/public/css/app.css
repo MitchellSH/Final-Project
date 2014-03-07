@@ -1,8 +1,63 @@
 @import url(http://fonts.googleapis.com/css?family=Lato:100);
+.front {
+  width: 250px;
+  height: 250px;
+  border: 2px solid white;
+  border-radius: 5px;
+  box-shadow: 0px 0px 15px white;
+  float: left;
+}
+.back {
+  background: transparent;
+  width: 250px;
+  height: 250px;
+}
+#lauren {
+  border: 2px solid white;
+  border-radius: 5px;
+  box-shadow: 0px 0px 15px white;
+  float: right;
+}
+#m {
+  text-shadow: 0px 1px 5px black;
+  color: white !important;
+  float: left;
+}
+#l {
+  text-shadow: 0px 1px 5px black;
+  color: white !important;
+  float: right;
+}
+.hidden {
+  display: none;
+  background: transparent;
+}
+#mitch:hover {
+  box-shadow: 0px 0px 15px black;
+}
+#lauren:hover {
+  box-shadow: 0px 0px 15px black;
+}
+i {
+  color: white;
+  margin: 4px;
+}
+.links {
+  background: transparent !important;
+  text-shadow: 0px 0px 5px grey;
+}
+.links:hover {
+  background: transparent !important;
+  text-shadow: 0px 0px 5px black;
+}
+.links:active {
+  background: transparent !important;
+  text-shadow: 0px 0px 5px white;
+}
 a {
   text-shadow: 0px 0px 5px black;
   color: white !important;
-  background: linear-gradient(#d3d3d3, #808080) !important;
+  background: linear-gradient(#a1a1a1, #808080) !important;
   font-family: 'Lato', sans-serif !important;
 }
 a:hover {
@@ -11,7 +66,7 @@ a:hover {
 a:active {
   color: black !important;
   text-shadow: 0px 0px 5px black;
-  background: linear-gradient(#808080, #d3d3d3) !important;
+  background: linear-gradient(#808080, #a1a1a1) !important;
 }
 .search,
 .quiz {
@@ -19,17 +74,26 @@ a:active {
   font-family: 'Lato', sans-serif;
   padding: 3px !important;
 }
+.search:active {
+  background: linear-gradient(#808080, #a1a1a1) !important;
+}
+.quiz:active {
+  background: linear-gradient(#808080, #a1a1a1) !important;
+}
 .dropdown {
   box-shadow: 0px 0px 15px grey !important;
 }
 .top-bar {
   border: transparent;
   font-family: 'Lato', sans-serif;
-  background: linear-gradient(#d3d3d3, #808080) !important;
+  background: linear-gradient(#a1a1a1, #808080) !important;
   box-shadow: 0px 0px 15px black;
 }
+#orbit {
+  font-family: 'Lato', sans-serif;
+}
 #tableQuestions {
-  background: linear-gradient(#d3d3d3, #808080) !important;
+  background: linear-gradient(#a1a1a1, #808080) !important;
   display: none;
   box-shadow: 0px 0px 5px black;
   border: transparent;
@@ -79,7 +143,7 @@ input:active {
   border-radius: 4px !important;
 }
 body {
-  background-image: url(/media/CR2.jpg);
+  background-image: url(/media/BG2.jpg);
   font-family: 'Lato', sans-serif;
 }
 #ecode {
@@ -87,8 +151,8 @@ body {
   text-shadow: 0px 0px 5px black;
   outline: none;
 }
-#ecode:active {
-  background: linear-gradient(#d3d3d3, #808080) !important;
+#ecode:hover {
+  text-shadow: 0px 0px 5px white;
 }
 .tftable {
   width: 100%;
@@ -97,7 +161,7 @@ body {
 #start {
   display: none;
   float: right;
-  background: linear-gradient(#d3d3d3, #808080) !important;
+  background: linear-gradient(#a1a1a1, #808080) !important;
   border-radius: 4px;
   font-family: 'Lato', sans-serif;
   text-shadow: 0px 0px 5px black;
@@ -107,10 +171,11 @@ body {
   text-shadow: 0px 0px 5px white;
 }
 #start:active {
-  background: linear-gradient(#808080, #d3d3d3) !important;
+  background: linear-gradient(#808080, #a1a1a1) !important;
   box-shadow: 0px 0px 1px black;
 }
-#welcome {
+#welcome,
+#about {
   background: transparent;
   padding: 20px;
   margin-top: 10px;
@@ -118,21 +183,12 @@ body {
   text-shadow: 0px 0px 15px black;
   text-align: center;
 }
-/*.panel{
-  //background: linear-gradient(#999999, transparent);
-  background: transparent;
-  padding: 80px;
-  margin-top: 10px;
-  border: transparent;
-  box-shadow: 0px 0px 15px black;
-  text-shadow: 0px 0px 5px black;
-  text-align: center;
-}*/
 #sub-header,
-#sub-header2 {
-  color: black !important;
+#sub-header2,
+p {
+  color: white !important;
   font-family: 'Lato', sans-serif;
-  text-shadow: 0px 0px 10px white;
+  text-shadow: 0px 0px 10px black;
 }
 h1 {
   color: white !important;

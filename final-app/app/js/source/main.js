@@ -6,6 +6,7 @@
 
   function initialize(){
     $(document).foundation();
+    $('#ecode').click(eCode);
     $('#home').click(home);
     $('#jquery').click(jqueryMagic);
     $('#html-jade').click(htmlMagic);
@@ -13,6 +14,7 @@
     $('#css').click(cssMagic);
     $('#lodash').click(lodashMagic);
     $('#git').click(gitMagic);
+    //$(document).on('click', '.back', flipBack);
   }
   var answers = [];
 
@@ -37,6 +39,14 @@
     ['How old is Piggie?', '20'],
     ['How many pigs are in a hour?', '60']
   ];*/
+
+  function eCode(){
+      $('#orbit').hide();
+      $('#about').show();
+      hideItAll();
+      hideWelcome();
+
+    }
 
 
   function routeArrays(){
@@ -80,16 +90,15 @@
     }
   }
 
-  //function hideWelcome(){
-    //$('#welcome').hide();
-  //}
+  function hideWelcome(){
+    $('#welcome').hide();
+  }
 
   function hideBlocks(){
-    $('.scrollblock').hide();
+    $('#orbit').hide();
   }
 
   function produceTable(){
-    //hideWelcome();
     $('#tableQuestions').show();
     $('#start').show().text('New Quiz');
   }
@@ -99,17 +108,18 @@
     $('#tableQuestions').hide();
   }
   function home(){
-    $('.scrollblock').show();
+    $('#orbit').show();
+    $('#welcome').show();
+    $('#about').hide();
     hideItAll();
     $('#header').text('Welcome To E_Code!');
     $('#sub-header').text('Helping You To Learn.');
     $('#sub-header2').text('');
-    //$('#search').hide();
-    //$('#quiz').hide();
   }
   function jqueryMagic(){
     hideBlocks();
-    //hideWelcome();
+    $('#about').hide();
+    $('#welcome').show();
     hideItAll();
     $('#searchJQ').text('Search Jquery').show().addClass('.searchJquery');
     $('#quizJQ').text('Quiz Jquery').show().addClass('.quizJquery').click(produceTable).attr('name', 'jqueryQuiz');
@@ -125,7 +135,8 @@
   }
   function htmlMagic(){
     hideBlocks();
-    //hideWelcome();
+    $('#welcome').show();
+    $('#about').hide();
     hideItAll();
     $('#searchHJ').text('Search HTML/Jade').show().addClass('.searchHTML/Jade');
     $('#quizHJ').text('Quiz HTML/Jade').show().addClass('.quizHTML/Jade').click(produceTable);
@@ -138,7 +149,8 @@
 
   function javaMagic(){
     hideBlocks();
-    //hideWelcome();
+    $('#welcome').show();
+    $('#about').hide();
     hideItAll();
     $('#searchJS').text('Search Javascript').show().addClass('.searchJavascript');
     $('#quizJS').text('Quiz Javascript').show().addClass('.quizJavascript').click(produceTable);
@@ -150,7 +162,8 @@
 
   function cssMagic(){
     hideBlocks();
-   // hideWelcome();
+    $('#welcome').show();
+    $('#about').hide();
     hideItAll();
     $('#searchCSS').text('Search CSS').show().addClass('.searchCSS');
     $('#quizCSS').text('Quiz CSS').show().addClass('.quizCSS').click(produceTable);
@@ -163,7 +176,8 @@
 
   function lodashMagic(){
     hideBlocks();
-    //hideWelcome();
+    $('#welcome').show();
+    $('#about').hide();
     hideItAll();
     $('#searchLD').text('Search LoDash').show().addClass('.searchLoDash');
     $('#quizLD').text('Quiz LoDash').show().addClass('.quizLoDash').click(produceTable);
@@ -175,7 +189,8 @@
 
   function gitMagic(){
     hideBlocks();
-    //hideWelcome();
+    $('#welcome').show();
+    $('#about').hide();
     hideItAll();
     $('#searchG').text('Search Git').show().addClass('.searchGit');
     $('#quizG').text('Quiz Git').show().addClass('.quizGit').click(produceTable);
@@ -184,6 +199,25 @@
     $('#sub-header').text('In software development, Git is a distributed revision control and source code management (SCM) system with an emphasis on speed.');
     $('#sub-header2').text('');
   }
+
+  $('.front').click(function(){
+    if(!$(this).hasClass('flipped')){
+      $(this).flip({
+        direction:'lr',
+      }).addClass('flipped');
+      $(this).children('.back').removeClass('hidden');
+      $(this).children('img').addClass('hidden');
+    } else {
+      $(this).flipBack();
+    }
+  });
+
+ /* function flipBack(){
+    debugger;
+    //$('.front').revertFlip();
+    $('#zim').removeClass('hidden');
+    $('#bbg').removeClass('hidden');
+  }*/
 
 })();
 
