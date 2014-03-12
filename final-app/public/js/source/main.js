@@ -81,7 +81,6 @@
     $('#scroll-box').show();
     $('#search-div').show();
     hideItAll();
-    hideWelcome();
     hideSiteLinks();
   }
   function hideSearchBox(){
@@ -92,7 +91,6 @@
   function showSiteLinks(){
     $('#site-container').show();
     hideItAll();
-    hideWelcome();
     hideSearchBox();
   }
   
@@ -100,16 +98,10 @@
     $('#site-container').hide();
   }
 
-  function hideWelcome(){
-    $('#welcome').hide();
-  }
-
-
   function produceTable(){
     $('#tableQuestions').show();
     $('#start').show().text('New Quiz');
     hideSearchBox();
-    hideWelcome();
     hideSiteLinks();
   }
   
@@ -130,11 +122,9 @@
 //-----------Top Nav Bar Functions------------------------>
   
   function eCode(){
-      //$('#orbit').hide();
       hideH4();
       $('#about').show();
       hideItAll();
-      hideWelcome();
       hideSearchBox();
       hideSiteLinks();
     }
