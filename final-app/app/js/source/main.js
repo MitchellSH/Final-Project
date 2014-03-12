@@ -8,14 +8,15 @@
     $(document).foundation();
     $('#ecode').click(eCode);
     $('#home').click(home);
-    $('#jquery').click(jqueryMagic);
-    $('#html-jade').click(htmlMagic);
-    $('#java').click(javaMagic);
-    $('#css').click(cssMagic);
-    $('#lodash').click(lodashMagic);
-    $('#git').click(gitMagic);
-    //$(document).on('click', '.back', flipBack);
+    $('#jquery').hover(jqueryMagic);
+    $('#html-jade').hover(htmlMagic);
+    $('#java').hover(javaMagic);
+    $('#css').hover(cssMagic);
+    $('#lodash').hover(lodashMagic);
+    $('#git').hover(gitMagic);
   }
+
+//---------Global Variables-------------------------------------------->
   var answers = [];
 
   var questions = [
@@ -28,27 +29,10 @@
     ['How old is Mitch?', '20'],
     ['How many minutes are in a hour?', '60']
   ];
-
- /* var questions2 = [
-    ['How many pigs are there?', '12'],
-    ['How many years has piggy Who been around?', '50'],
-    ['Which Doctor(number) wears a pig tie?', '11'],
-    ['Which Doctor(number) said "Allons-pig"?', '10'],
-    ['How many pigs does earth have?', '1'],
-    ['How old is Pig?', '22'],
-    ['How old is Piggie?', '20'],
-    ['How many pigs are in a hour?', '60']
-  ];*/
-
-  function eCode(){
-      $('#orbit').hide();
-      $('#about').show();
-      hideItAll();
-      hideWelcome();
-
-    }
+//--------------------------------------------------------------------->
 
 
+//-----Shuffling The Questions and Answers Of The Table---------------->
   function routeArrays(){
     var name = $(this).attr('name');
     switch (name){
@@ -89,26 +73,77 @@
       alert('wrong');
     }
   }
+//------------------------------------------------------->
+
+//-------Minor Hide and Show Functions------------------->
+
+  function showSearchBox(){
+    $('#scroll-box').show();
+    $('#search-div').show();
+    hideItAll();
+    hideWelcome();
+    hideSiteLinks();
+  }
+  function hideSearchBox(){
+    $('#scroll-box').hide();
+    $('#search-div').hide();
+  }
+
+  function showSiteLinks(){
+    $('#site-container').show();
+    hideItAll();
+    hideWelcome();
+    hideSearchBox();
+  }
+  
+  function hideSiteLinks(){
+    $('#site-container').hide();
+  }
 
   function hideWelcome(){
     $('#welcome').hide();
   }
 
-  function hideBlocks(){
-    $('#orbit').hide();
-  }
 
   function produceTable(){
     $('#tableQuestions').show();
     $('#start').show().text('New Quiz');
+    hideSearchBox();
+    hideWelcome();
+    hideSiteLinks();
+  }
+  
+  function showH4(){
+    $('h4').show();
+  }
+
+  function hideH4(){
+    $('h4').hide();
   }
 
   function hideItAll(){
     $('#start').hide();
     $('#tableQuestions').hide();
   }
+//-------------------------------------------------------->
+
+//-----------Top Nav Bar Functions------------------------>
+  
+  function eCode(){
+      //$('#orbit').hide();
+      hideH4();
+      $('#about').show();
+      hideItAll();
+      hideWelcome();
+      hideSearchBox();
+      hideSiteLinks();
+    }
+
   function home(){
-    $('#orbit').show();
+    showH4();
+    hideSearchBox();
+    hideSiteLinks();
+    //$('#orbit').show();
     $('#welcome').show();
     $('#about').hide();
     hideItAll();
@@ -117,89 +152,91 @@
     $('#sub-header2').text('');
   }
   function jqueryMagic(){
-    hideBlocks();
+    hideH4();
+    hideSiteLinks();
+    hideSearchBox();
     $('#about').hide();
     $('#welcome').show();
     hideItAll();
-    $('#searchJQ').text('Search Jquery').show().addClass('.searchJquery');
-    $('#quizJQ').text('Quiz Jquery').show().addClass('.quizJquery').click(produceTable).attr('name', 'jqueryQuiz');
+    $('#searchJQ').text('Search Jquery').addClass('.searchJquery').click(showSearchBox);
+    $('#quizJQ').text('Quiz Jquery').addClass('.quizJquery').click(produceTable).attr('name', 'jqueryQuiz');
+    $('#linkJQ').click(showSiteLinks);
     $('#start').attr('name','jqueryQuiz').click(routeArrays);
     $('#nameQuiz').text('Jquery Quiz');
-    $('#header').text('Jquery');
-    $('#sub-header').text('Jquery simplifies HTML document traversing, event handling, animating, and Ajax interactions for rapid web development.');
-    $('#sub-header2').text('');
     $('.submit1').attr('name', 'jqueryAnswer1').click(routeArrays);
     $('.submit2').attr('name', 'jqueryAnswer2').click(routeArrays);
     $('.submit3').attr('name', 'jqueryAnswer3').click(routeArrays);
     $('.submit4').attr('name', 'jqueryAnswer4').click(routeArrays);
   }
   function htmlMagic(){
-    hideBlocks();
+    hideH4();
+    hideSiteLinks();
+    hideSearchBox();
     $('#welcome').show();
     $('#about').hide();
     hideItAll();
-    $('#searchHJ').text('Search HTML/Jade').show().addClass('.searchHTML/Jade');
-    $('#quizHJ').text('Quiz HTML/Jade').show().addClass('.quizHTML/Jade').click(produceTable);
+    $('#searchHJ').text('Search HTML/Jade').addClass('.searchHTML/Jade').click(showSearchBox);
+    $('#quizHJ').text('Quiz HTML/Jade').addClass('.quizHTML/Jade').click(produceTable);
+    $('#linkHJ').click(showSiteLinks);
     $('#nameQuiz').text('HTML/Jade Quiz');
-    $('#header').text('HTML/JADE');
-    $('#sub-header').text('HTML is the unversal markup language for the Web.');
-    $('#sub-header2').text('HTML lets you format text, graphics, links, inputs, etc. and save it all in a text file that will display in your browser.');
 
   }
-
   function javaMagic(){
-    hideBlocks();
+    hideSiteLinks();
+    hideH4();
+    hideSearchBox();
+    //hideBlocks();
     $('#welcome').show();
     $('#about').hide();
     hideItAll();
-    $('#searchJS').text('Search Javascript').show().addClass('.searchJavascript');
-    $('#quizJS').text('Quiz Javascript').show().addClass('.quizJavascript').click(produceTable);
+    $('#searchJS').text('Search Javascript').addClass('.searchJavascript').click(showSearchBox);
+    $('#quizJS').text('Quiz Javascript').addClass('.quizJavascript').click(produceTable);
+    $('#linkJS').click(showSiteLinks);
     $('#nameQuiz').text('Java Quiz');
-    $('#header').text('Javascript');
-    $('#sub-header').text('JavaScript is a lightweight, interpreted programming language with object-oriented capabilities that allows you to build interactivity into otherwise static HTML pages.');
-    $('#sub-header2').text('');
   }
 
   function cssMagic(){
-    hideBlocks();
+    hideSiteLinks();
+    hideH4();
+    hideSearchBox();
     $('#welcome').show();
     $('#about').hide();
     hideItAll();
-    $('#searchCSS').text('Search CSS').show().addClass('.searchCSS');
-    $('#quizCSS').text('Quiz CSS').show().addClass('.quizCSS').click(produceTable);
+    $('#searchCSS').text('Search CSS').addClass('.searchCSS').click(showSearchBox);
+    $('#quizCSS').text('Quiz CSS').addClass('.quizCSS').click(produceTable);
+    $('#linkCSS').click(showSiteLinks);
     $('#nameQuiz').text('CSS Quiz');
-    $('#header').text('CSS');
-    $('#sub-header').text('The styling and design of your HTML.');
-    $('#sub-header2').text('');
 
   }
 
   function lodashMagic(){
-    hideBlocks();
+    hideSiteLinks();
+    hideH4();
+    hideSearchBox();
     $('#welcome').show();
     $('#about').hide();
     hideItAll();
-    $('#searchLD').text('Search LoDash').show().addClass('.searchLoDash');
-    $('#quizLD').text('Quiz LoDash').show().addClass('.quizLoDash').click(produceTable);
+    $('#searchLD').text('Search LoDash').addClass('.searchLoDash').click(showSearchBox);
+    $('#quizLD').text('Quiz LoDash').addClass('.quizLoDash').click(produceTable);
+    $('#linkLD').click(showSiteLinks);
     $('#nameQuiz').text('LoDash Quiz');
-    $('#header').text('Lo-Dash');
-    $('#sub-header').text('A utility library delivering consistency, customization, performance, & extras.');
-    $('#sub-header2').text('');
   }
 
   function gitMagic(){
-    hideBlocks();
+    hideSiteLinks();
+    hideH4();
+    hideSearchBox();
     $('#welcome').show();
     $('#about').hide();
     hideItAll();
-    $('#searchG').text('Search Git').show().addClass('.searchGit');
-    $('#quizG').text('Quiz Git').show().addClass('.quizGit').click(produceTable);
+    $('#searchG').text('Search Git').addClass('.searchGit').click(showSearchBox);
+    $('#quizG').text('Quiz Git').addClass('.quizGit').click(produceTable);
+    $('#linkG').click(showSiteLinks);
     $('#nameQuiz').text('Git Quiz');
-    $('#header').text('Git');
-    $('#sub-header').text('In software development, Git is a distributed revision control and source code management (SCM) system with an emphasis on speed.');
-    $('#sub-header2').text('');
   }
+//------------------------------------------------------------------>
 
+//----------The Flip Effect For The "about us" Avatars-------------->
   $('.front').click(function(){
     if(!$(this).hasClass('flipped')){
       $(this).flip({
@@ -208,16 +245,16 @@
       $(this).children('.back').removeClass('hidden');
       $(this).children('img').addClass('hidden');
     } else {
-      $(this).flipBack();
+      $(this).flip({
+          direction:'rl',
+        }).removeClass('flipped');
+      $(this).children('.back').addClass('hidden');
+      $(this).children('img').removeClass('hidden');
     }
   });
 
- /* function flipBack(){
-    debugger;
-    //$('.front').revertFlip();
-    $('#zim').removeClass('hidden');
-    $('#bbg').removeClass('hidden');
-  }*/
+  //---------------------------------------------------------------->
+
 
 })();
 

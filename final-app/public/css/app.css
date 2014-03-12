@@ -1,21 +1,20 @@
 @import url(http://fonts.googleapis.com/css?family=Lato:100);
 .front {
+  background: white;
   width: 250px;
   height: 250px;
-  border: 2px solid white;
+  border: 2px solid transparent;
   border-radius: 5px;
-  box-shadow: 0px 0px 15px white;
   float: left;
 }
 .back {
-  background: transparent;
+  background: linear-gradient(#a1a1a1, #808080) !important;
+  border-radius: 5px;
   width: 250px;
   height: 250px;
 }
 #lauren {
-  border: 2px solid white;
   border-radius: 5px;
-  box-shadow: 0px 0px 15px white;
   float: right;
 }
 #m {
@@ -54,6 +53,58 @@ i {
   background: transparent !important;
   text-shadow: 0px 0px 5px white;
 }
+#scroll-box {
+  background: linear-gradient(#a1a1a1, #808080) !important;
+  height: 400px;
+  width: 250px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 15px black;
+  display: none;
+  position: fixed;
+  margin-top: 20px;
+}
+#scroll-header {
+  text-shadow: 0px 0px 10px black;
+  box-shadow: 0px 7px 15px grey;
+}
+#scroll-contents {
+  overflow: scroll;
+  height: 350px;
+  width: 250px;
+  padding-left: 5px;
+}
+#search-div {
+  margin-top: 20px;
+  background: linear-gradient(#a1a1a1, #808080) !important;
+  text-shadow: 0px 0px 10px black;
+  height: 400px;
+  width: 550px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 15px black;
+  display: none;
+}
+#site-links {
+  background: linear-gradient(#a1a1a1, #808080) !important;
+  text-shadow: 0px 0px 10px black;
+  border-radius: 5px;
+  height: 300px;
+  width: 700px;
+  box-shadow: 0px 0px 15px black;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: scroll;
+}
+#site-links-header {
+  background: transparent;
+  padding: 20px;
+  margin-top: 10px;
+  border: transparent;
+  text-shadow: 0px 0px 15px black;
+  text-align: center;
+}
+#site-container {
+  display: none;
+}
 a {
   text-shadow: 0px 0px 5px black;
   color: white !important;
@@ -69,16 +120,24 @@ a:active {
   background: linear-gradient(#808080, #a1a1a1) !important;
 }
 .search,
-.quiz {
+.quiz,
+.about,
+.link {
   background: grey !important;
   font-family: 'Lato', sans-serif;
   padding: 3px !important;
 }
 .search:active {
-  background: linear-gradient(#808080, #a1a1a1) !important;
+  background: darkgrey !important;
 }
 .quiz:active {
-  background: linear-gradient(#808080, #a1a1a1) !important;
+  background: darkgrey !important;
+}
+.about:active {
+  background: darkgrey !important;
+}
+.link:active {
+  background: darkgrey !important;
 }
 .dropdown {
   box-shadow: 0px 0px 15px grey !important;
@@ -91,6 +150,7 @@ a:active {
 }
 #orbit {
   font-family: 'Lato', sans-serif;
+  display: none;
 }
 #tableQuestions {
   background: linear-gradient(#a1a1a1, #808080) !important;
@@ -142,10 +202,6 @@ input:active {
   border-color: black !important;
   border-radius: 4px !important;
 }
-body {
-  background-image: url(/media/BG2.jpg);
-  font-family: 'Lato', sans-serif;
-}
 #ecode {
   color: white !important;
   text-shadow: 0px 0px 5px black;
@@ -166,6 +222,7 @@ body {
   font-family: 'Lato', sans-serif;
   text-shadow: 0px 0px 5px black;
   box-shadow: 0px 0px 2px black;
+  margin: 20px;
 }
 #start:hover {
   text-shadow: 0px 0px 5px white;
@@ -173,6 +230,10 @@ body {
 #start:active {
   background: linear-gradient(#808080, #a1a1a1) !important;
   box-shadow: 0px 0px 1px black;
+}
+body {
+  background: black;
+  font-family: 'Lato', sans-serif;
 }
 #welcome,
 #about {
@@ -204,34 +265,133 @@ h3 {
   font-family: 'Lato', sans-serif;
   text-align: center;
 }
-/*
-h4{
+h4 {
   color: white !important;
-  font-family: 'Lato', sans-serif;
 }
-
-.scrollblock{
-  position: relative;
-  margin: 0;
-  height: 600px;
-  width: 1280px;
-  padding: 100px;
-  padding-top: 100px;
-  padding-bottom: 100px;
-  color: white !important;
-  text-shadow: 0px 0px 5px black;
+.cb-slideshow,
+.cb-slideshow:after {
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+}
+.cb-slideshow:after {
+  content: '';
+  background: transparent url(/media/pattern.png) repeat top left;
+}
+.cb-slideshow li span {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  color: transparent;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: none;
+  opacity: 0;
+  z-index: 0;
+  animation: imageAnimation 36s linear infinite 0s;
+}
+.cb-slideshow li div {
+  z-index: 1000;
+  position: absolute;
+  bottom: 30px;
+  left: 0px;
+  width: 100%;
   text-align: center;
+  opacity: 0;
+  color: #fff;
+  animation: titleAnimation 36s linear infinite 0s;
 }
-
-//#slide1{
-  //background: lightblue !important;
-  //background-image: url(/media/CR3.jpg);
-//}
-#slide2{
-  //background: lightgreen !important;
-  background-image: url(/media/CR4.jpg);
+.cb-slideshow li div h4 {
+  font-family: 'Lato', sans-serif;
+  font-size: 240px;
+  padding: 0;
+  line-height: 200px;
 }
-#slide3{
-  //background: lightyellow !important;
-  background-image: url(/media/CR5.jpg);
-}*/
+li {
+  list-style: none;
+}
+.cb-slideshow li:nth-child(1) span {
+  background: linear-gradient(#0cfe94, #62d5fe);
+}
+.cb-slideshow li:nth-child(2) span {
+  background: linear-gradient(#0000ff, #808080);
+  animation-delay: 6s;
+}
+.cb-slideshow li:nth-child(3) span {
+  background: linear-gradient(#40e0d0, #800000);
+  animation-delay: 12s;
+}
+.cb-slideshow li:nth-child(4) span {
+  background: linear-gradient(#ffff00, #ff69b4);
+  animation-delay: 18s;
+}
+.cb-slideshow li:nth-child(5) span {
+  background: linear-gradient(#87ceeb, #4682b4);
+  animation-delay: 24s;
+}
+.cb-slideshow li:nth-child(6) span {
+  background: linear-gradient(#90ee90, #008000);
+  animation-delay: 30s;
+}
+.cb-slideshow li:nth-child(2) div {
+  animation-delay: 6s;
+}
+.cb-slideshow li:nth-child(3) div {
+  animation-delay: 12s;
+}
+.cb-slideshow li:nth-child(4) div {
+  animation-delay: 18s;
+}
+.cb-slideshow li:nth-child(5) div {
+  animation-delay: 24s;
+}
+.cb-slideshow li:nth-child(6) div {
+  animation-delay: 30s;
+}
+@keyframes imageAnimation {
+  0% {
+    opacity: 0;
+    animation-timing-function: ease-in;
+  }
+  8% {
+    opacity: 1;
+    animation-timing-function: ease-out;
+  }
+  17% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes titleAnimation {
+  0% {
+    opacity: 0;
+  }
+  8% {
+    opacity: 1;
+  }
+  17% {
+    opacity: 1;
+  }
+  19% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes hue {
+  from {
+    filter: hue-rotate(0deg);
+  }
+  to {
+    filter: hue-rotate(-360deg);
+  }
+}
