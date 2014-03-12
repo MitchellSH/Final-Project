@@ -14,230 +14,212 @@ html(class='no-js', lang='en')
     script(src='/js/vendor/modernizr.js')
 
 body
-ul.cb-slideshow
-  li
-    span Image 1
-    div
-      h4 J-Query
-  li
-    span Image 2
-    div
-      h4 HTML/Jade
-  li
-    span Image 3
-    div
-      h4 Javascript
-  li
-    span Image 4
-    div
-      h4 CSS
-  li
-    span Image 5
-    div
-      h4 Lo-Dash
-  li
-    span Image 6
-    div
-      h4 Git
-.nav.top-bar(data-topbar)
-  section.top-bar-section
-    ul.text-area
-      li.name
-        a#ecode E_Code
-      li.divider
-    ul.left
-      li.active
-        a#home Home
-      li.divider
-    ul.right
-      li.divider
-            li.has-dropdown.full-width.not-click
-              a(href='#')#jquery Jquery
-              ul.dropdown
-                li.list
-                  a.search#searchJQ Search
-                  a.quiz#quizJQ Quiz
-                  a.about#aboutJQ About Jquery
-                  a.link#linkJQ Links Jquery
-      li.divider
-            li.has-dropdown.not-click
-              a(href='#')#html-jade HTML/Jade
-              ul.dropdown
-                li.list
-                  a.search#searchHJ Search
-                  a.quiz#quizHJ Quiz
-                  a.about#aboutHJ About HTML/Jade
-                  a.link#linkHJ Links HTML/Jade
-      li.divider
-            li.has-dropdown.not-click
-              a(href='#')#java Javascript
-              ul.dropdown
-                li.list
-                  a.search#searchJS Search
-                  a.quiz#quizJS Quiz
-                  a.about#aboutJS About JS
-                  a.link#linkJS Links JS
-      li.divider
-            li.has-dropdown.not-click
-              a(href='#')#css CSS
-              ul.dropdown
-                li.list
-                  a.search#searchCSS Search
-                  a.quiz#quizCSS Quiz
-                  a.about#aboutCSS About CSS
-                  a.link#linkCSS Links CSS
-      li.divider
-            li.has-dropdown.not-click
-              a(href='#')#lodash LoDash
-              ul.dropdown
-                li.list
-                  a.search#searchLD Search
-                  a.quiz#quizLD Quiz
-                  a.about#aboutLD About LoDash
-                  a.link#linkLD Links LoDash
-      li.divider
-            li.has-dropdown.not-click
-              a(href='#')#git git
-              ul.dropdown
-                li.list
-                  a.search#searchG Search
-                  a.quiz#quizG Quiz
-                  a.about#aboutG About Git
-                  a.link#linkG Links Git
-
-            .panel#welcome
-              h1#header Welcome To E_Code!
-              #sub-header Helping You To Learn.
-        .panel#about(style='display: none')
-          h1 About Us
-          p E_Code was created by Lauren Bowser and Mitchell Hollander. 
-          p We wanted to create a site that helped future developers learn how to code in a easy, less stressful manner.
-          .row
-            .small-6.columns
-              #lauren.front
-                img#bbg(src='/media/bbg.gif')
-                #content1.back.hidden
-                    a.links(href='https://github.com/lbowser')
-                      i(class='fa fa-github-square fa-5x')
-            .small-6.columns
-              #mitch.front
-                img#zim(src='/media/zim2.png')
-                #content2.back.hidden 
-                    a.links(href='https://github.com/MitchellSH')
-                      i(class='fa fa-github-square fa-5x')
-                    a.links(href='https://twitter.com/Mitch_Hollander')
-                      i(class='fa fa-twitter-square fa-5x')
-                    a.links(href='http://instagram.com/mitchell_hollander')
-                      i(class='fa fa-instagram fa-5x')
-                    a.links(href='https://plus.google.com/u/0/111891834390020142373/posts')
-                      i(class='fa fa-google-plus-square fa-5x')
-          .row
-            .small-6.columns
-              p#l Lauren Bowser
-            .small-6.columns
-              p#m Mitchell Hollander
-
+  #slideshow
+    ul.cb-slideshow
+      li
+        span Image 1
+        div
+          h4 JQuery
+      li
+        span Image 2
+        div
+          h4 HTML/Jade
+      li
+        span Image 3
+        div
+          h4 Javascript
+      li
+        span Image 4
+        div
+          h4 CSS
+      li
+        span Image 5
+        div
+          h4 Lo-Dash
+      li
+        span Image 6
+        div
+          h4 Git
+  .nav.top-bar(data-topbar)
+    section.top-bar-section
+      ul.text-area
+        li.name
+          a#ecode E_Code
+        li.divider
+      ul.left
+        li.active
+          a#home Home
+        li.divider
+      ul.right
+        li.divider
+             li.has-dropdown.full-width.not-click
+                a(href='#')#jquery Jquery
+                ul.dropdown
+                  li.list
+                    a.search#searchJQ Search
+                    a.quiz#quizJQ Quiz
+                    a.about#aboutJQ About Jquery
+                    a.link#linkJQ Links Jquery
+        li.divider
+              li.has-dropdown.not-click
+                a(href='#')#html-jade HTML/Jade
+                ul.dropdown
+                  li.list
+                    a.search#searchHJ Search
+                    a.quiz#quizHJ Quiz
+                    a.about#aboutHJ About HTML/Jade
+                    a.link#linkHJ Links HTML/Jade
+        li.divider
+              li.has-dropdown.not-click
+                a(href='#')#java Javascript
+                ul.dropdown
+                  li.list
+                    a.search#searchJS Search
+                    a.quiz#quizJS Quiz
+                    a.about#aboutJS About JS
+                    a.link#linkJS Links JS
+        li.divider
+              li.has-dropdown.not-click
+                a(href='#')#css CSS
+                ul.dropdown
+                  li.list
+                    a.search#searchCSS Search
+                    a.quiz#quizCSS Quiz
+                    a.about#aboutCSS About CSS
+                    a.link#linkCSS Links CSS
+        li.divider
+              li.has-dropdown.not-click
+                a(href='#')#lodash LoDash
+                ul.dropdown
+                  li.list
+                    a.search#searchLD Search
+                    a.quiz#quizLD Quiz
+                    a.about#aboutLD About LoDash
+                    a.link#linkLD Links LoDash
+        li.divider
+              li.has-dropdown.not-click
+                a(href='#')#git Git
+                ul.dropdown
+                  li.list
+                    a.search#searchG Search
+                    a.quiz#quizG Quiz
+                    a.about#aboutG About Git
+                    a.link#linkG Links Git
+      .row
+        .small-12.columns
+          .panel#about(style='display: none')
+            h1 About Us
+            p E_Code was created by Lauren Bowser and Mitchell Hollander. 
+            p We wanted to create a site that helped future developers learn how to code in a easy, less stressful manner.
+            .row
+              .small-6.columns
+                #lauren.front
+                  img#bbg(src='/media/bbg.gif')
+                  #content1.back.hidden
+                      a.links(href='https://github.com/lbowser')
+                        i(class='fa fa-github-square fa-5x')
+              .small-6.columns
+                #mitch.front
+                  img#zim(src='/media/zim2.png')
+                  #content2.back.hidden 
+                      a.links(href='https://github.com/MitchellSH')
+                        i(class='fa fa-github-square fa-5x')
+                      a.links(href='https://twitter.com/Mitch_Hollander')
+                        i(class='fa fa-twitter-square fa-5x')
+                      a.links(href='http://instagram.com/mitchell_hollander')
+                        i(class='fa fa-instagram fa-5x')
+                      a.links(href='https://plus.google.com/u/0/111891834390020142373/posts')
+                        i(class='fa fa-google-plus-square fa-5x')
+            .row
+              .small-6.columns
+                p#l Lauren Bowser
+              .small-6.columns
+                p#m Mitchell Hollander
 
 
 
-    .row
-      .small-12.columns
-        #container
-          button.tiny#start Start Quiz
 
-    .row
-      .small-12.columns
-        #container2
-         #container3
-           #counter
-         table#tableQuestions
-           col(style='width: 80%')
-           col(style='width: 60%')
-           tr
-             th#nameQuiz
-             th T or F
-           tr
-             td#q0
-             td
-               .row
-                 .small-6.columns
-                   input(type='text').answer0
-                 .small-6.columns
-                   button.tiny.radius.submit1(data-qnum=0) submit
-           tr
-             td#q1
-             td
-               .row
-                 .small-6.columns
-                   input(type='text').answer1
-                 .small-6.columns
-                   button.tiny.radius.submit2(data-qnum=1) submit
-           tr
-             td#q2
-             td
-               .row
-                 .small-6.columns
-                   input(type='text').answer2
-                 .small-6.columns
-                   button.tiny.radius.submit3(data-qnum=2) submit
-           tr
-             td#q3
-             td
-               .row
-                 .small-6.columns
-                   input(type='text').answer3
-                 .small-6.columns
-                   button.tiny.radius.submit4(data-qnum=3) submit
+      .row
+        .small-12.columns
+          #container
+            button.tiny#start Start Quiz
+
+      .row
+        .small-12.columns
+          #container2
+           table#tableQuestions
+             col(style='width: 80%')
+             col(style='width: 60%')
+             tr
+               th#nameQuiz
+               th T or F
+             tr
+               td#q0
+               td
+                 .row
+                   .small-6.columns
+                     input(type='text').answer0
+                   .small-6.columns
+                     button.tiny.radius.submit1(data-qnum=0) submit
+             tr
+               td#q1
+               td
+                 .row
+                   .small-6.columns
+                     input(type='text').answer1
+                   .small-6.columns
+                     button.tiny.radius.submit2(data-qnum=1) submit
+             tr
+               td#q2
+               td
+                 .row
+                   .small-6.columns
+                     input(type='text').answer2
+                   .small-6.columns
+                     button.tiny.radius.submit3(data-qnum=2) submit
+             tr
+               td#q3
+               td
+                 .row
+                   .small-6.columns
+                     input(type='text').answer3
+                   .small-6.columns
+                     button.tiny.radius.submit4(data-qnum=3) submit
     
-     #orbit
-       ul.example-orbit-content(data-orbit)
-         li(data-orbit-slide='headline-1')
-           #div1
-             h2 E_Code
-             h3 Easy Learning!
-         li(data-orbit-slide='headline-2')
-           #div2
-             h2 Jquery
-             h3 Learn Jquery With Quizes and More!
-         li(data-orbit-slide='headline-3')
-           #div3
-             h2 Javascript
-             h3 Learn Javascript!
 
-.row
-  .small-6.columns
-   #scroll-box
-     h3#scroll-header Search Scroll
-     #scroll-contents
-      p hello
-      p im
-      p a
-      p or
-      p suppose
-      p to 
-      p be 
-      p a 
-      p scroll
-      p box
-      p and 
-      p behold
-      p I 
-      p think 
-      p this 
-      p works
-  
-  .small-6.columns
-   #search-div
-     h3 Search Box
+  .row
+    .small-6.columns
+      #scroll-box
+         h3#scroll-header Search Scroll
+         #scroll-contents
+           p hello
+           p im
+           p a
+           p or
+           p suppose
+           p to 
+           p be 
+           p a 
+           p scroll
+           p box
+           p and 
+           p behold
+           p I 
+           p think 
+           p this 
+           p works
+    .small-6.columns
+      #search-div
+        h3 Search Box
 
 
-.row
-  .small-12.columns
-   #site-container
-    .panel#site-links-header
-      h1 Site Links
-      p Reference Sources.
-    #site-links
+  .row
+    .small-12.columns
+      #site-container
+        .panel#site-links-header
+          h1 Site Links
+          p Reference Sources.
+          #site-links
 
 
 

@@ -141,10 +141,8 @@
 
   function home(){
     showH4();
-    hideSearchBox();
     hideSiteLinks();
-    //$('#orbit').show();
-    $('#welcome').show();
+    hideSearchBox();
     $('#about').hide();
     hideItAll();
     $('#header').text('Welcome To E_Code!');
@@ -152,15 +150,10 @@
     $('#sub-header2').text('');
   }
   function jqueryMagic(){
-    hideH4();
-    hideSiteLinks();
-    hideSearchBox();
     $('#about').hide();
-    $('#welcome').show();
-    hideItAll();
-    $('#searchJQ').text('Search Jquery').addClass('.searchJquery').click(showSearchBox);
-    $('#quizJQ').text('Quiz Jquery').addClass('.quizJquery').click(produceTable).attr('name', 'jqueryQuiz');
-    $('#linkJQ').click(showSiteLinks);
+    $('#searchJQ').text('Search Jquery').addClass('.searchJquery').click(showSearchBox).click(hideH4);
+    $('#quizJQ').text('Quiz Jquery').addClass('.quizJquery').click(produceTable).click(hideH4).attr('name', 'jqueryQuiz');
+    $('#linkJQ').click(showSiteLinks).click(hideH4);
     $('#start').attr('name','jqueryQuiz').click(routeArrays);
     $('#nameQuiz').text('Jquery Quiz');
     $('.submit1').attr('name', 'jqueryAnswer1').click(routeArrays);
@@ -169,69 +162,43 @@
     $('.submit4').attr('name', 'jqueryAnswer4').click(routeArrays);
   }
   function htmlMagic(){
-    hideH4();
-    hideSiteLinks();
-    hideSearchBox();
-    $('#welcome').show();
     $('#about').hide();
-    hideItAll();
-    $('#searchHJ').text('Search HTML/Jade').addClass('.searchHTML/Jade').click(showSearchBox);
-    $('#quizHJ').text('Quiz HTML/Jade').addClass('.quizHTML/Jade').click(produceTable);
-    $('#linkHJ').click(showSiteLinks);
+    $('#searchHJ').text('Search HTML/Jade').addClass('.searchHTML/Jade').click(showSearchBox).click(hideH4);
+    $('#quizHJ').text('Quiz HTML/Jade').addClass('.quizHTML/Jade').click(produceTable).click(hideH4);
+    $('#linkHJ').click(showSiteLinks).click(hideH4);
     $('#nameQuiz').text('HTML/Jade Quiz');
 
   }
   function javaMagic(){
-    hideSiteLinks();
-    hideH4();
-    hideSearchBox();
-    //hideBlocks();
-    $('#welcome').show();
     $('#about').hide();
-    hideItAll();
-    $('#searchJS').text('Search Javascript').addClass('.searchJavascript').click(showSearchBox);
-    $('#quizJS').text('Quiz Javascript').addClass('.quizJavascript').click(produceTable);
-    $('#linkJS').click(showSiteLinks);
+    $('#searchJS').text('Search Javascript').addClass('.searchJavascript').click(showSearchBox).click(hideH4);
+    $('#quizJS').text('Quiz Javascript').addClass('.quizJavascript').click(produceTable).click(hideH4);
+    $('#linkJS').click(showSiteLinks).click(hideH4);
     $('#nameQuiz').text('Java Quiz');
   }
 
   function cssMagic(){
-    hideSiteLinks();
-    hideH4();
-    hideSearchBox();
-    $('#welcome').show();
     $('#about').hide();
-    hideItAll();
-    $('#searchCSS').text('Search CSS').addClass('.searchCSS').click(showSearchBox);
-    $('#quizCSS').text('Quiz CSS').addClass('.quizCSS').click(produceTable);
-    $('#linkCSS').click(showSiteLinks);
+    $('#searchCSS').text('Search CSS').addClass('.searchCSS').click(showSearchBox).click(hideH4);
+    $('#quizCSS').text('Quiz CSS').addClass('.quizCSS').click(produceTable).click(hideH4);
+    $('#linkCSS').click(showSiteLinks).click(hideH4);
     $('#nameQuiz').text('CSS Quiz');
 
   }
 
   function lodashMagic(){
-    hideSiteLinks();
-    hideH4();
-    hideSearchBox();
-    $('#welcome').show();
     $('#about').hide();
-    hideItAll();
-    $('#searchLD').text('Search LoDash').addClass('.searchLoDash').click(showSearchBox);
-    $('#quizLD').text('Quiz LoDash').addClass('.quizLoDash').click(produceTable);
-    $('#linkLD').click(showSiteLinks);
+    $('#searchLD').text('Search LoDash').addClass('.searchLoDash').click(showSearchBox).click(hideH4);
+    $('#quizLD').text('Quiz LoDash').addClass('.quizLoDash').click(produceTable).click(hideH4);
+    $('#linkLD').click(showSiteLinks).click(hideH4);
     $('#nameQuiz').text('LoDash Quiz');
   }
 
   function gitMagic(){
-    hideSiteLinks();
-    hideH4();
-    hideSearchBox();
-    $('#welcome').show();
     $('#about').hide();
-    hideItAll();
-    $('#searchG').text('Search Git').addClass('.searchGit').click(showSearchBox);
-    $('#quizG').text('Quiz Git').addClass('.quizGit').click(produceTable);
-    $('#linkG').click(showSiteLinks);
+    $('#searchG').text('Search Git').addClass('.searchGit').click(showSearchBox).click(hideH4);
+    $('#quizG').text('Quiz Git').addClass('.quizGit').click(produceTable).click(hideH4);
+    $('#linkG').click(showSiteLinks).click(hideH4);
     $('#nameQuiz').text('Git Quiz');
   }
 //------------------------------------------------------------------>
