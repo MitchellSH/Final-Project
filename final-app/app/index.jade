@@ -149,47 +149,68 @@ body
           #score
 
       .row
-        .small-12.columns
+        .small-6.columns
           #container2
-           table#tableQuestions
-             col(style='width: 80%')
-             col(style='width: 60%')
+            table#tableQuestions
+              col.col1
+              col.col2
+              tr
+                th#nameQuiz
+                th Choice
+              tr
+                td
+                    #q0
+                td
+                  .row
+                    .small-3.columns
+                        input(type='text').answer0
+                    .small-3.columns
+                        button.tiny.radius.submit1(data-qnum=0) submit
+              tr
+                td
+                    #q1
+                td
+                  .row
+                    .small-3.columns
+                        input(type='text').answer1
+                    .small-3.columns
+                        button.tiny.radius.submit2(data-qnum=1) submit
+              tr
+                td
+                    #q2
+                td
+                  .row
+                    .small-3.columns
+                        input(type='text').answer2
+                    .small-3.columns
+                        button.tiny.radius.submit3(data-qnum=2) submit
+              tr
+                td
+                    #q3
+                td
+                  .row
+                    .small-3.columns
+                        input(type='text').answer3
+                    .small-3.columns
+                        button.tiny.radius.submit4(data-qnum=3) submit
+
+        .small-6.columns
+          table#dov
+             col.col1
+             col.col2
              tr
-               th#nameQuiz
-               th T or F
+               th#multipleChoice
+               th Multiple Choice
              tr
-               td#q0
-               td
-                 .row
-                   .small-6.columns
-                     input(type='text').answer0
-                   .small-6.columns
-                     button.tiny.radius.submit1(data-qnum=0) submit
+               td.c0
              tr
-               td#q1
-               td
-                 .row
-                   .small-6.columns
-                     input(type='text').answer1
-                   .small-6.columns
-                     button.tiny.radius.submit2(data-qnum=1) submit
+               td.c1
              tr
-               td#q2
-               td
-                 .row
-                   .small-6.columns
-                     input(type='text').answer2
-                   .small-6.columns
-                     button.tiny.radius.submit3(data-qnum=2) submit
+               td.c2
              tr
-               td#q3
-               td
-                 .row
-                   .small-6.columns
-                     input(type='text').answer3
-                   .small-6.columns
-                     button.tiny.radius.submit4(data-qnum=3) submit
-    
+               td.c3
+
+
 
   .row
     .small-6.columns

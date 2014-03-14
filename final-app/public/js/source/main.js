@@ -20,14 +20,14 @@
   var answers = [];
 
   var questions = [
-    ['flkdsajdlka;dfldsfaj', '12'],
-    ['How many years has Doctor Who been around?', '50'],
-    ['Which Doctor(number) wears a bow tie?', '11'],
-    ['Which Doctor(number) said "Allons-y"?', '10'],
-    ['How many moons does earth have?', '1'],
-    ['How old is Lauren?', '22'],
-    ['How old is Mitch?', '20'],
-    ['How many minutes are in a hour?', '60']
+    ['efbdegeheghyay','moon', '12'],
+    ['How many years has Doctor Who been around?','potato', '50'],
+    ['Which Doctor(number) wears a bow tie?','waffle', '11'],
+    ['Which Doctor(number) said "Allons-y"?','teacup', '10'],
+    ['How many moons  does earth have?','coffee', '1'],
+    ['How old is Lauren?','google', '22'],
+    ['How old is Mitch?','fdsgfdsgfdgsd', '20'],
+    ['How many minutes are in a hour?','phone', '60']
   ];
 //--------------------------------------------------------------------->
 
@@ -54,10 +54,14 @@
   }
 
   function askQuestion(passedInArray){
-    var array = _.shuffle(passedInArray);
-    for(var i = 0; i < array.length; i++){
-      $('#q' + i).text(array[i][0]);
-      answers.push(array[i][1]);
+    var array = passedInArray;
+    for(var i = 0; i < 4; i++){
+      var array2 = _.shuffle(array);
+      $('#q' + i).text(array2[i][0]);
+      var array3 = [0,1,2,3];
+      var integer5 = _.shuffle(array3);
+      $('.c' + integer5).text(array2[i][1]);
+      answers.push(array[i][2]);
     }
   }
 
@@ -101,6 +105,7 @@
   function produceTable(){
     $('#tableQuestions').show();
     $('#start').show().text('New Quiz');
+    $('#dov').show();
     hideSearchBox();
     hideSiteLinks();
   }
@@ -116,6 +121,8 @@
   function hideItAll(){
     $('#start').hide();
     $('#tableQuestions').hide();
+    $('#dov').hide();
+
   }
 //-------------------------------------------------------->
 
