@@ -17,8 +17,7 @@
   }
 
 //---------Global Variables-------------------------------------------->
-  var answers = [];
-
+/*
   var questions = [
     ['efbdegeheghyay','moon', '12'],
     ['How many years has Doctor Who been around?','potato', '50'],
@@ -28,56 +27,10 @@
     ['How old is Lauren?','google', '22'],
     ['How old is Mitch?','fdsgfdsgfdgsd', '20'],
     ['How many minutes are in a hour?','phone', '60']
-  ];
+  ];*/
 //--------------------------------------------------------------------->
 
 
-//-----Shuffling The Questions and Answers Of The Table---------------->
-  function routeArrays(){
-    var name = $(this).attr('name');
-    switch (name){
-      case 'jqueryAnswer1':
-        answerQuestion(answers, 0);
-        break;
-      case 'jqueryAnswer2':
-        answerQuestion(answers, 1);
-        break;
-      case 'jqueryAnswer3':
-        answerQuestion(answers, 2);
-        break;
-      case 'jqueryAnswer4':
-        answerQuestion(answers, 3);
-        break;
-      case 'jqueryQuiz':
-        askQuestion(questions);
-    }
-  }
-
-  function askQuestion(passedInArray){
-    var array = passedInArray;
-    for(var i = 0; i < 4; i++){
-      var array2 = _.shuffle(array);
-      $('#q' + i).text(array2[i][0]);
-      var array3 = [0,1,2,3];
-      var integer5 = _.shuffle(array3);
-      $('.c' + integer5).text(array2[i][1]);
-      answers.push(array[i][2]);
-    }
-  }
-
-  function answerQuestion(newArray, index){
-    if($('.answer' + index).val()===newArray[index]){
-      alert('right');
-    }
-    else if($('.answer' + index).val()===('')){
-      alert('please answer question');
-    }
-    else
-    {
-      alert('wrong');
-    }
-  }
-//------------------------------------------------------->
 
 //-------Minor Hide and Show Functions------------------->
 
@@ -86,16 +39,29 @@
     $('#search-div').show();
     hideItAll();
     hideSiteLinks();
+    hideAboutPage();
   }
   function hideSearchBox(){
     $('#scroll-box').hide();
     $('#search-div').hide();
   }
 
+  function showAboutPage(){
+    $('#about-page').show();
+    hideSearchBox();
+    hideSiteLinks();
+    hideItAll();
+  }
+
+  function hideAboutPage(){
+    $('#about-page').hide();
+  }
+
   function showSiteLinks(){
     $('#site-container').show();
     hideItAll();
     hideSearchBox();
+    hideAboutPage();
   }
   
   function hideSiteLinks(){
@@ -105,9 +71,13 @@
   function produceTable(){
     $('#tableQuestions').show();
     $('#start').show().text('New Quiz');
+    $('#dropdown-quiz').show();
     $('#dov').show();
+    $('#score-right').show();
+    $('#score-wrong').show();
     hideSearchBox();
     hideSiteLinks();
+    hideAboutPage();
   }
   
   function showH4(){
@@ -120,8 +90,11 @@
 
   function hideItAll(){
     $('#start').hide();
+    $('#dropdown-quiz').hide();
     $('#tableQuestions').hide();
     $('#dov').hide();
+    $('#score-right').hide();
+    $('#score-wrong').hide();
 
   }
 //-------------------------------------------------------->
@@ -134,10 +107,12 @@
       hideItAll();
       hideSearchBox();
       hideSiteLinks();
+      hideAboutPage();
     }
 
   function home(){
     showH4();
+    hideAboutPage();
     hideSiteLinks();
     hideSearchBox();
     $('#about').hide();
@@ -146,57 +121,71 @@
     $('#sub-header').text('Helping You To Learn.');
     $('#sub-header2').text('');
   }
+  function dropDown(){
+    var name = $(this).attr('name');
+    switch (name){
+      case 'jqueryQuiz':
+        $('li').removeClass('Q1').addClass('JQ1');
+        /*$('li').removeClass('Q2').addClass('JQ2');
+        $('li').removeClass('Q3').addClass('JQ3');
+        $('li').removeClass('Q4').addClass('JQ4');
+        $('li').removeClass('Q5').addClass('JQ5');
+        $('li').removeClass('Q6').addClass('JQ6');
+        */
+        break;
+    }
+
+  }
   function jqueryMagic(){
     $('#about').hide();
     $('#searchJQ').text('Search Jquery').addClass('.searchJquery').click(showSearchBox).click(hideH4);
-    $('#quizJQ').text('Quiz Jquery').addClass('.quizJquery').click(produceTable).click(hideH4).attr('name', 'jqueryQuiz');
+    $('#quizJQ').text('Jquery Quiz').addClass('.quizJquery').click(produceTable).click(hideH4).attr('name', 'jqueryQuiz').click(dropDown);
     $('#linkJQ').click(showSiteLinks).click(hideH4);
-    $('#start').attr('name','jqueryQuiz').click(routeArrays);
-    $('#nameQuiz').text('Jquery Quiz');
-    $('.submit1').attr('name', 'jqueryAnswer1').click(routeArrays);
-    $('.submit2').attr('name', 'jqueryAnswer2').click(routeArrays);
-    $('.submit3').attr('name', 'jqueryAnswer3').click(routeArrays);
-    $('.submit4').attr('name', 'jqueryAnswer4').click(routeArrays);
+    $('#aboutJQ').click(showAboutPage).click(hideH4);
+    $('.submit1').attr('name', 'jqueryAnswer1').click();
+    $('.submit2').attr('name', 'jqueryAnswer2').click();
+    $('.submit3').attr('name', 'jqueryAnswer3').click();
+    $('.submit4').attr('name', 'jqueryAnswer4').click();
   }
   function htmlMagic(){
     $('#about').hide();
     $('#searchHJ').text('Search HTML/Jade').addClass('.searchHTML/Jade').click(showSearchBox).click(hideH4);
-    $('#quizHJ').text('Quiz HTML/Jade').addClass('.quizHTML/Jade').click(produceTable).click(hideH4);
+    $('#quizHJ').text('HTML/Jade Quiz').addClass('.quizHTML/Jade').click(produceTable).click(hideH4);
     $('#linkHJ').click(showSiteLinks).click(hideH4);
-    $('#nameQuiz').text('HTML/Jade Quiz');
+    $('#aboutHJ').click(showAboutPage).click(hideH4);
 
   }
   function javaMagic(){
     $('#about').hide();
     $('#searchJS').text('Search Javascript').addClass('.searchJavascript').click(showSearchBox).click(hideH4);
-    $('#quizJS').text('Quiz Javascript').addClass('.quizJavascript').click(produceTable).click(hideH4);
+    $('#quizJS').text('Javascript Quiz').addClass('.quizJavascript').click(produceTable).click(hideH4);
     $('#linkJS').click(showSiteLinks).click(hideH4);
-    $('#nameQuiz').text('Java Quiz');
+    $('#aboutJS').click(showAboutPage).click(hideH4);
   }
 
   function cssMagic(){
     $('#about').hide();
     $('#searchCSS').text('Search CSS').addClass('.searchCSS').click(showSearchBox).click(hideH4);
-    $('#quizCSS').text('Quiz CSS').addClass('.quizCSS').click(produceTable).click(hideH4);
+    $('#quizCSS').text('CSS Quiz').addClass('.quizCSS').click(produceTable).click(hideH4);
     $('#linkCSS').click(showSiteLinks).click(hideH4);
-    $('#nameQuiz').text('CSS Quiz');
+    $('#aboutCSS').click(showAboutPage).click(hideH4);
 
   }
 
   function lodashMagic(){
     $('#about').hide();
     $('#searchLD').text('Search LoDash').addClass('.searchLoDash').click(showSearchBox).click(hideH4);
-    $('#quizLD').text('Quiz LoDash').addClass('.quizLoDash').click(produceTable).click(hideH4);
+    $('#quizLD').text('LoDash Quiz').addClass('.quizLoDash').click(produceTable).click(hideH4);
     $('#linkLD').click(showSiteLinks).click(hideH4);
-    $('#nameQuiz').text('LoDash Quiz');
+    $('#aboutLD').click(showAboutPage).click(hideH4);
   }
 
   function gitMagic(){
     $('#about').hide();
     $('#searchG').text('Search Git').addClass('.searchGit').click(showSearchBox).click(hideH4);
-    $('#quizG').text('Quiz Git').addClass('.quizGit').click(produceTable).click(hideH4);
+    $('#quizG').text('Git Quiz').addClass('.quizGit').click(produceTable).click(hideH4);
     $('#linkG').click(showSiteLinks).click(hideH4);
-    $('#nameQuiz').text('Git Quiz');
+    $('#aboutG').click(showAboutPage).click(hideH4);
   }
 //------------------------------------------------------------------>
 

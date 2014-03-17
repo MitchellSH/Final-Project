@@ -45,13 +45,10 @@ body
       ul.text-area
         li.name
           a#ecode E_Code
-        li.divider
       ul.left
         li.active
           a#home Home
-        li.divider
       ul.right
-        li.divider
              li.has-dropdown.full-width.not-click
                 a(href='#')#jquery Jquery
                 ul.dropdown
@@ -60,7 +57,6 @@ body
                     a.quiz#quizJQ Quiz
                     a.about#aboutJQ About Jquery
                     a.link#linkJQ Links Jquery
-        li.divider
               li.has-dropdown.not-click
                 a(href='#')#html-jade HTML/Jade
                 ul.dropdown
@@ -69,7 +65,6 @@ body
                     a.quiz#quizHJ Quiz
                     a.about#aboutHJ About HTML/Jade
                     a.link#linkHJ Links HTML/Jade
-        li.divider
               li.has-dropdown.not-click
                 a(href='#')#java Javascript
                 ul.dropdown
@@ -78,7 +73,6 @@ body
                     a.quiz#quizJS Quiz
                     a.about#aboutJS About JS
                     a.link#linkJS Links JS
-        li.divider
               li.has-dropdown.not-click
                 a(href='#')#css CSS
                 ul.dropdown
@@ -87,7 +81,6 @@ body
                     a.quiz#quizCSS Quiz
                     a.about#aboutCSS About CSS
                     a.link#linkCSS Links CSS
-        li.divider
               li.has-dropdown.not-click
                 a(href='#')#lodash LoDash
                 ul.dropdown
@@ -96,7 +89,6 @@ body
                     a.quiz#quizLD Quiz
                     a.about#aboutLD About LoDash
                     a.link#linkLD Links LoDash
-        li.divider
               li.has-dropdown.not-click
                 a(href='#')#git Git
                 ul.dropdown
@@ -140,13 +132,30 @@ body
 
 
       .row
-        .small-12.columns
+        .small-6.columns
+          #score-right
+            p#right Right 
+            p.rightAnswer
+          #score-wrong
+            p#wrong Wrong
+            p.wrongAnswer
+        .small-6.columns
           #container
-            button.tiny#start Start Quiz
+            a#dropdown-quiz(href='#' data-dropdown='drop1') Choose Quiz
+            ul#drop1.f-dropdown(data-dropdown-content)
+              li.0
+                a(href='#').Q1 Quiz One
+              li.1
+                a(href='#').Q2 Quiz Two
+              li.2
+                a(href='#').Q3 Quiz Three
+              li.3
+                a(href='#').Q4 Quiz Four
+              li.4
+                a(href='#').Q5 Quiz Five
+              li.5
+                a(href='#').Q6 Quiz Six
 
-      .row
-        .small-12.columns
-          #score
 
       .row
         .small-6.columns
@@ -245,6 +254,12 @@ body
           h1 Site Links
           p Reference Sources.
           #site-links
+
+
+  .row
+    .small-12.columns
+      #about-page
+
 
 
 

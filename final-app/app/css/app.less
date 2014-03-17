@@ -1,5 +1,5 @@
 //-------Font Imports-----------------
-@import url(http://fonts.googleapis.com/css?family=Lato:100);
+@import url(http://fonts.googleapis.com/css?family=Lato:100, 200);
 //------------------------------------
 
 //-------About Us Avatars CSS----------
@@ -74,7 +74,8 @@ i{
 //-----------<Scroll Box and Search Option CSS>------------------
 
 #scroll-box{
-  background: linear-gradient(#a1a1a1, grey) !important;
+  //background: linear-gradient(#a1a1a1, grey) !important;
+  background: white !important;
   height: 400px;
   width: 250px;
   border-radius: 5px;
@@ -98,7 +99,8 @@ i{
 
 #search-div{
   margin-top: 20px;
-  background: linear-gradient(#a1a1a1, grey) !important;
+  //background: linear-gradient(#a1a1a1, grey) !important;
+  background: white !important;
   text-shadow: 0px 0px 10px black;
   height: 400px;
   width: 550px;
@@ -113,7 +115,8 @@ i{
 //-----------< Site Links CSS >-----------------------------
 
 #site-links{
-  background: linear-gradient(#a1a1a1, grey) !important;
+  //background: linear-gradient(#a1a1a1, grey) !important;
+  background: white !important;
   text-shadow: 0px 0px 10px black;
   border-radius: 5px;
   height: 300px;
@@ -126,6 +129,7 @@ i{
 
 #site-links-header{
   background: transparent;
+  color: grey !important;
   padding: 20px;
   margin-top: 10px;
   border: transparent;
@@ -139,54 +143,76 @@ i{
 
 //----------------------------------------------------------
 
+//------About Languages Page-------------------
+
+#about-page{
+  //background: linear-gradient(#a1a1a1, grey) !important;
+  background: white !important;
+  margin-top: 40px;
+  //text-shadow: 0px 0px 10px black;
+  border-radius: 5px;
+  height: 300px;
+  width: 700px;
+  box-shadow: 0px 0px 15px black;
+  margin-left: auto;
+  margin-right: auto;
+  display: none;
+}
+
+//---------------------------------------------
+
 
 
 
 //---------Top Nav Bar CSS---------------------
 a{
-  text-shadow: 0px 0px 5px black;
-  color: white !important;
-  background: linear-gradient(#a1a1a1, grey) !important;
+  //text-shadow: 0px 0px 5px black;
+  color: grey !important;
+  //background: linear-gradient(#a1a1a1, grey) !important;
+  background: white !important;
   font-family: 'Lato', sans-serif !important;
 }
 
 a:hover{
-  text-shadow: 0px 0px 5px white;
+  //text-shadow: 0px 0px 5px white;
+  color: lightblue !important;
 }
 
 a:active{
-  color: black !important;
-  text-shadow: 0px 0px 5px black;
-  background: linear-gradient(grey, #a1a1a1) !important;
+  color: white !important;
+  //text-shadow: 0px 0px 5px black;
+  //background: linear-gradient(grey, #a1a1a1) !important;
+  background: lightblue !important;
 }
 
 .search, .quiz, .about, .link{
-  background: grey !important;
+  background: white !important;
   font-family: 'Lato', sans-serif;
-  padding: 3px !important;
+  //padding: 3px !important;
 }
 .search:active{
-  background: darkgrey !important;
+  background: lightblue !important;
+  color: white !important;
 }
 
 .quiz:active{
-  background: darkgrey !important;
+  background: lightblue !important;
+  color: white !important;
 }
 .about:active{
-  background: darkgrey !important;
+  background: lightblue !important;
 }
 .link:active{
-  background: darkgrey !important;
+  background: lightblue !important;
+  color: white !important;
 }
 
-.dropdown{
-  box-shadow: 0px 0px 15px grey !important;
-}
 
 .top-bar{
   border: transparent;
   font-family: 'Lato', sans-serif;
-  background: linear-gradient(#a1a1a1, grey) !important;
+  //background: linear-gradient(#a1a1a1, grey) !important;
+  background: white !important;
   box-shadow: 0px 0px 15px black;
 }
 //--------------------------------------------------------------
@@ -196,14 +222,15 @@ a:active{
 
 
 #tableQuestions{
-  background: linear-gradient(#A1A1A1, grey) !important;
+  //background: linear-gradient(#A1A1A1, grey) !important;
+  background: white !important;
   display: none;
   box-shadow: 0px 0px 5px black;
   border: transparent;
   width: 580px;
   height: 400px;
-  text-shadow: 0px 0px 5px black;
-  color: white !important;
+  //text-shadow: 0px 0px 5px black;
+  color: grey !important;
   border-radius: 4px;
   margin-top: 10px;
   margin-left: auto;
@@ -211,14 +238,15 @@ a:active{
 }
 
 #dov{
-  background: linear-gradient(#A1A1A1, grey) !important;
+  //background: linear-gradient(#A1A1A1, grey) !important;
+  background: white !important;
   display: none;
   box-shadow: 0px 0px 5px black;
   border: transparent;
   width: 580px;
   height: 400px;
-  text-shadow: 0px 0px 5px black;
-  color: white !important;
+  //text-shadow: 0px 0px 5px black;
+  color: grey !important;
   border-radius: 4px;
   margin-left: auto;
   margin-top: 10px;
@@ -235,43 +263,41 @@ a:active{
 
 tr{
   background: transparent !important;
-  border: 1px solid black;
 }
 
 th{
-  color: white !important;
-  border: 1px solid black;
+  color: grey !important;
 }
 
 td{
-  color: white !important;
-  text-shadow: 0px 0px 5px black;
-  border: 1px solid black;
+  color: grey !important;
+  //text-shadow: 0px 0px 5px black;
 }
 
 
 button.tiny.radius{
   font-family: 'Lato', sans-serif;
   background: transparent;
-  border: 1px solid lightgrey;
+  border: 1px solid grey;
   position: relative;
   border-radius: 4px;
-  color: white;
-  text-shadow: 0px 0px 5px black;
+  color: grey;
+  //text-shadow: 0px 0px 5px black;
   float: right;
   margin-top: 7px;
   //margin-left: auto;
   //margin-right: auto;
 }
 button.tiny.radius:hover{
-  text-shadow: 0px 0px 5px white;
-  border: 1px solid white;
+  //text-shadow: 0px 0px 5px white;
+  border: 1px solid lightblue;
+  color: lightblue !important;
 }
 button.tiny.radius:active{
-  background: white;
-  border: 1px solid white;
-  color: black !important;
-  text-shadow: 0px 0px 5px black;
+  background: lightblue !important;
+  border: 1px solid lightblue;
+  color: white !important;
+  //text-shadow: 0px 0px 5px black;
 }
 
 input{
@@ -287,37 +313,84 @@ input:active{
 }
 
 #ecode{
-  color: white !important;
-  text-shadow: 0px 0px 5px black;
+  color: grey !important;
+  //text-shadow: 0px 0px 5px black;
   outline: none;
 }
 #ecode:hover{
-  text-shadow: 0px 0px 5px white;
+  //text-shadow: 0px 0px 5px lightblue;
+  color: lightblue !important;
 }
+#ecode:active{
+  background: lightblue !important;
+  color: white !important;
+}
+
 .tftable{
   width: 100%;
   color: black;
 }
 
-#start{
+#dropdown-quiz:hover{
+  //border: 1px solid lightgrey;
+  //text-shadow: 0px 0px 5px white;
+  color: lightblue !important;
+}
+
+#dropdown-quiz:active{
+  //background: linear-gradient(grey, #a1a1a1) !important;
+  background: lightblue !important;
+  color: white !important;
+  box-shadow: 0px 0px 1px black;
+}
+
+
+#dropdown-quiz{
   display: none;
+  //background: linear-gradient(#a1a1a1, grey) !important;
+  background: white !important;
+  text-align: center;
+  width: 150px;
   float: right;
-  background: linear-gradient(#a1a1a1, grey) !important;
   border-radius: 4px;
   font-family: 'Lato', sans-serif;
-  text-shadow: 0px 0px 5px black;
+  color: grey !important;
+  //text-shadow: 0px 0px 5px black;
   box-shadow: 0px 0px 2px black;
   margin: 20px;
 }
-#start:hover{
-  //border: 1px solid lightgrey;
-  text-shadow: 0px 0px 5px white;
+
+#score-wrong{
+  display: none;
+  background: white !important;
+  box-shadow: 0px 0px 2px black;
+  border-radius: 4px;
+  height: 45px;
+  width: 150px;
+  margin-top: 20px;
+  float: right;
+  margin-right: 270px;
+}
+#score-right{
+  display: none;
+  background: white !important;
+  box-shadow: 0px 0px 2px black;
+  border-radius: 4px;
+  height: 45px;
+  width: 150px;
+  float: left;
+  margin-top: 20px;
+  margin-left: 15px;
 }
 
-#start:active{
-  background: linear-gradient(grey, #a1a1a1) !important;
-  box-shadow: 0px 0px 1px black;
+#right,
+#wrong{
+  color: grey !important;
+  font-family: 'Lato', sans-serif;
+  text-align: center;
+  text-shadow: 0px 0px 0px white;
 }
+
 //-------------------------------------------------------
 
 //-----------Body Background CSS-------------------------
@@ -328,7 +401,7 @@ body{
   //background: linear-gradient(to right,#0CFE94, #62D5FE);
   //background: linear-gradient(to right, #6E6E6E, #999999);
   //background: linear-gradient(to right, #62D5FE, #68BEFE) !important;
-  background: black;
+  background: white;
   font-family: 'Lato', sans-serif;
 }
 //-------------------------------------------------------
@@ -455,7 +528,7 @@ li{
 }
 .cb-slideshow li:nth-child(6) span { 
   //background-image: url(/media/car4.jpg);
-  background: linear-gradient(lightgreen, green);
+  background: linear-gradient(purple, green);
   animation-delay: 30s; 
 }
 
@@ -500,6 +573,3 @@ li{
 }
 
 //------------------------------------------------------
-#score{
-  display: none;
-}
