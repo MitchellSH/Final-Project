@@ -1,6 +1,8 @@
 (function(){
 
   'use strict';
+  var counter = 0;
+  var counter1 = 0;
 
   $(document).ready(initialize);
 
@@ -15,19 +17,23 @@
     $('#lodash').hover(lodashMagic);
     $('#git').hover(gitMagic);
   }
+  function submitButtons(){
+    $('.submit1').attr('name', 'JQ1A1').one('click',(dropDown));
+    $('.submit2').attr('name', 'JQ1A2').one('click',(dropDown));
+    $('.submit3').attr('name', 'JQ1A3').one('click',(dropDown));
+    $('.submit4').attr('name', 'JQ1A4').one('click',(dropDown));
+    $('.submit5').attr('name', 'JQ1A5').one('click',(dropDown));
+  }
 
 //---------Global Variables-------------------------------------------->
-/*
+
   var questions = [
-    ['efbdegeheghyay','moon', '12'],
-    ['How many years has Doctor Who been around?','potato', '50'],
-    ['Which Doctor(number) wears a bow tie?','waffle', '11'],
-    ['Which Doctor(number) said "Allons-y"?','teacup', '10'],
-    ['How many moons  does earth have?','coffee', '1'],
-    ['How old is Lauren?','google', '22'],
-    ['How old is Mitch?','fdsgfdsgfdgsd', '20'],
-    ['How many minutes are in a hour?','phone', '60']
-  ];*/
+    ['efbdegeheghyay','2.moon', '2'],
+    ['How many years has Doctor Who been around?','5.potato', '5'],
+    ['Which Doctor(number) wears a bow tie?','4.waffle', '4'],
+    ['Which Doctor(number) said "Allons-y"?','1.teacup', '1'],
+    ['How many moons  does earth have?','3.coffee', '3'],
+  ];
 //--------------------------------------------------------------------->
 
 
@@ -79,6 +85,7 @@
     hideSiteLinks();
     hideAboutPage();
   }
+
   
   function showH4(){
     $('h4').show();
@@ -97,6 +104,16 @@
     $('#score-wrong').hide();
 
   }
+
+  function clearDivs(){
+    $('.answer0').val('');
+    $('.answer1').val('');
+    $('.answer2').val('');
+    $('.answer3').val('');
+    $('.answer4').val('');
+    $('.wrongAnswer').empty();
+    $('.rightAnswer').empty();
+  }
 //-------------------------------------------------------->
 
 //-----------Top Nav Bar Functions------------------------>
@@ -109,6 +126,19 @@
       hideSiteLinks();
       hideAboutPage();
     }
+  function askQuestion(array){
+    for(var i=0; i < array.length; i++){
+      $('#q' + i).text(array[i][0]);
+    }
+  }
+
+  function choices(array){
+    var shuffled = _.shuffle(array);
+    for(var i=0; i < shuffled.length; i++){
+      $('.c' + i).text(shuffled[i][1]);
+    }
+  }
+
 
   function home(){
     showH4();
@@ -121,31 +151,139 @@
     $('#sub-header').text('Helping You To Learn.');
     $('#sub-header2').text('');
   }
+  function answerQuestion(array,index){
+    //debugger;
+    var manipulate;
+    var manipulate1;
+    if($('.answer'+index).val()===array[index][2]){
+      if($('.rightAnswer').val()===0){
+        counter+=1;
+        $('.rightAnswer').text(counter);
+      }
+      else if($('rightAnswer').val()===1){
+        manipulate = counter - 1;
+        $('.rightAnswer').text(manipulate);
+      }
+      else if($('rightAnswer').val()===2){
+        manipulate = counter - 1;
+        $('.rightAnswer').text(manipulate);
+      }
+      else if($('rightAnswer').val()===3){
+        manipulate = counter - 1;
+        $('.rightAnswer').text(manipulate);
+      }
+      else if($('rightAnswer').val()===4){
+        manipulate = counter - 1;
+        $('.rightAnswer').text(manipulate);
+      }
+      else ($('rightAnswer').val()===5)){
+        manipulate = counter - 1;
+        $('.rightAnswer').text(manipulate);
+      }
+    }
+    else if($('.answer'+index).val()===(' ')){
+      alert('Please Enter Answer');
+    }
+    else{
+      if($('.rightAnswer').val()===0){
+        counter+=1;
+        $('.rightAnswer').text(counter);
+      }
+      else if($('rightAnswer').val()===1){
+      counter1+=1;
+         manipulate1 = counter1 - 1;
+      $('.wrongAnswer').text(manipulate1);
+      }
+      else if($('rightAnswer').val()===2){
+      counter1+=1;
+         manipulate1 = counter1 - 1;
+      $('.wrongAnswer').text(manipulate1);
+      }
+      else if($('rightAnswer').val()===3){
+      counter1+=1;
+         manipulate1 = counter1 - 1;
+      $('.wrongAnswer').text(manipulate1);
+      }
+      else if($('rightAnswer').val()===4){
+      counter1+=1;
+         manipulate1 = counter1 - 1;
+      $('.wrongAnswer').text(manipulate1);
+      }
+      else($('rightAnswer').val()===5){
+      counter1+=1;
+         manipulate1 = counter1 - 1;
+      $('.wrongAnswer').text(manipulate1);
+      }
+    }
+  }
+
   function dropDown(){
     var name = $(this).attr('name');
     switch (name){
-      case 'jqueryQuiz':
-        $('li').removeClass('Q1').addClass('JQ1');
-        /*$('li').removeClass('Q2').addClass('JQ2');
-        $('li').removeClass('Q3').addClass('JQ3');
-        $('li').removeClass('Q4').addClass('JQ4');
-        $('li').removeClass('Q5').addClass('JQ5');
-        $('li').removeClass('Q6').addClass('JQ6');
-        */
+      case 'JQ1':
+        askQuestion(questions);
+        choices(questions);
+        break;
+      case 'JQ1A1':
+        //debugger;
+        answerQuestion(questions,0);
+        break;
+      case 'JQ1A2':
+        answerQuestion(questions,1);
+        break;
+      case 'JQ1A3':
+        answerQuestion(questions,2);
+        break;
+      case 'JQ1A4':
+        answerQuestion(questions,3);
+        break;
+      case 'JQ1A5':
+        answerQuestion(questions,4);
+        break;
+      case 'JQ2':
+        askQuestion();
+        choices();
+        break;
+      case 'JQ3':
+        askQuestion();
+        choices();
+        break;
+      case 'JQ4':
+        askQuestion();
+        choices();
+        break;
+      case 'JQ5':
+        askQuestion();
+        choices();
+        break;
+      case 'JQ6':
+        askQuestion();
+        choices();
         break;
     }
-
   }
+  function jqueryQuiz(){
+    $('.Q1').attr('name', 'JQ1').click(dropDown).click(clearDivs);
+    $('.Q2').attr('name', 'JQ2').click(clearDivs).click(submitButtons);
+    $('.Q3').attr('name', 'JQ3').click(clearDivs).click(submitButtons);
+    $('.Q4').attr('name', 'JQ4').click(clearDivs).click(submitButtons);
+    $('.Q5').attr('name', 'JQ5').click(clearDivs).click(submitButtons);
+    $('.Q6').attr('name', 'JQ6').click(clearDivs).click(submitButtons);
+    /*
+    $('.submit1').attr('name', 'JQ1A1').click(dropDown);
+    $('.submit2').attr('name', 'JQ1A2').click(dropDown);
+    $('.submit3').attr('name', 'JQ1A3').click(dropDown);
+    $('.submit4').attr('name', 'JQ1A4').click(dropDown);
+    $('.submit5').attr('name', 'JQ1A5').click(dropDown);
+    */
+  }
+
   function jqueryMagic(){
     $('#about').hide();
     $('#searchJQ').text('Search Jquery').addClass('.searchJquery').click(showSearchBox).click(hideH4);
-    $('#quizJQ').text('Jquery Quiz').addClass('.quizJquery').click(produceTable).click(hideH4).attr('name', 'jqueryQuiz').click(dropDown);
+    $('#quizJQ').text('Jquery Quiz').addClass('.quizJquery').click(produceTable).click(jqueryQuiz).click(hideH4).attr('name', 'jqueryQuiz').click(submitButtons);
     $('#linkJQ').click(showSiteLinks).click(hideH4);
     $('#aboutJQ').click(showAboutPage).click(hideH4);
-    $('.submit1').attr('name', 'jqueryAnswer1').click();
-    $('.submit2').attr('name', 'jqueryAnswer2').click();
-    $('.submit3').attr('name', 'jqueryAnswer3').click();
-    $('.submit4').attr('name', 'jqueryAnswer4').click();
   }
   function htmlMagic(){
     $('#about').hide();
