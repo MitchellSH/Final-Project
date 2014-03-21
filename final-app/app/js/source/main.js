@@ -16,13 +16,11 @@
     $('#css').hover(cssMagic);
     $('#lodash').hover(lodashMagic);
     $('#git').hover(gitMagic);
-  }
-  function submitButtons(){
-    $('.submit1').attr('name', 'JQ1A1').one('click',(dropDown));
-    $('.submit2').attr('name', 'JQ1A2').one('click',(dropDown));
-    $('.submit3').attr('name', 'JQ1A3').one('click',(dropDown));
-    $('.submit4').attr('name', 'JQ1A4').one('click',(dropDown));
-    $('.submit5').attr('name', 'JQ1A5').one('click',(dropDown));
+    $('.submit1').attr('name', 'JQ1A1').click(dropDown).removeClass('.submit0').addClass('.disabled');
+    $('.submit2').attr('name', 'JQ1A2').click(dropDown);
+    $('.submit3').attr('name', 'JQ1A3').click(dropDown);
+    $('.submit4').attr('name', 'JQ1A4').click(dropDown);
+    $('.submit5').attr('name', 'JQ1A5').click(dropDown);
   }
 
 //---------Global Variables-------------------------------------------->
@@ -151,69 +149,17 @@
     $('#sub-header').text('Helping You To Learn.');
     $('#sub-header2').text('');
   }
-  function answerQuestion(array,index){
-    //debugger;
-    var manipulate;
-    var manipulate1;
+  function answerQuestion(array, index){
     if($('.answer'+index).val()===array[index][2]){
-      if($('.rightAnswer').val()===0){
-        counter+=1;
-        $('.rightAnswer').text(counter);
-      }
-      else if($('rightAnswer').val()===1){
-        manipulate = counter - 1;
-        $('.rightAnswer').text(manipulate);
-      }
-      else if($('rightAnswer').val()===2){
-        manipulate = counter - 1;
-        $('.rightAnswer').text(manipulate);
-      }
-      else if($('rightAnswer').val()===3){
-        manipulate = counter - 1;
-        $('.rightAnswer').text(manipulate);
-      }
-      else if($('rightAnswer').val()===4){
-        manipulate = counter - 1;
-        $('.rightAnswer').text(manipulate);
-      }
-      else ($('rightAnswer').val()===5)){
-        manipulate = counter - 1;
-        $('.rightAnswer').text(manipulate);
-      }
+      counter += 1;
+      $('.rightAnswer').text(counter);
     }
     else if($('.answer'+index).val()===(' ')){
       alert('Please Enter Answer');
     }
     else{
-      if($('.rightAnswer').val()===0){
-        counter+=1;
-        $('.rightAnswer').text(counter);
-      }
-      else if($('rightAnswer').val()===1){
-      counter1+=1;
-         manipulate1 = counter1 - 1;
-      $('.wrongAnswer').text(manipulate1);
-      }
-      else if($('rightAnswer').val()===2){
-      counter1+=1;
-         manipulate1 = counter1 - 1;
-      $('.wrongAnswer').text(manipulate1);
-      }
-      else if($('rightAnswer').val()===3){
-      counter1+=1;
-         manipulate1 = counter1 - 1;
-      $('.wrongAnswer').text(manipulate1);
-      }
-      else if($('rightAnswer').val()===4){
-      counter1+=1;
-         manipulate1 = counter1 - 1;
-      $('.wrongAnswer').text(manipulate1);
-      }
-      else($('rightAnswer').val()===5){
-      counter1+=1;
-         manipulate1 = counter1 - 1;
-      $('.wrongAnswer').text(manipulate1);
-      }
+      counter1 += 1;
+      $('.wrongAnswer').text(counter1);
     }
   }
 
@@ -225,7 +171,6 @@
         choices(questions);
         break;
       case 'JQ1A1':
-        //debugger;
         answerQuestion(questions,0);
         break;
       case 'JQ1A2':
@@ -264,24 +209,17 @@
   }
   function jqueryQuiz(){
     $('.Q1').attr('name', 'JQ1').click(dropDown).click(clearDivs);
-    $('.Q2').attr('name', 'JQ2').click(clearDivs).click(submitButtons);
-    $('.Q3').attr('name', 'JQ3').click(clearDivs).click(submitButtons);
-    $('.Q4').attr('name', 'JQ4').click(clearDivs).click(submitButtons);
-    $('.Q5').attr('name', 'JQ5').click(clearDivs).click(submitButtons);
-    $('.Q6').attr('name', 'JQ6').click(clearDivs).click(submitButtons);
-    /*
-    $('.submit1').attr('name', 'JQ1A1').click(dropDown);
-    $('.submit2').attr('name', 'JQ1A2').click(dropDown);
-    $('.submit3').attr('name', 'JQ1A3').click(dropDown);
-    $('.submit4').attr('name', 'JQ1A4').click(dropDown);
-    $('.submit5').attr('name', 'JQ1A5').click(dropDown);
-    */
+    $('.Q2').attr('name', 'JQ2').click(clearDivs);
+    $('.Q3').attr('name', 'JQ3').click(clearDivs);
+    $('.Q4').attr('name', 'JQ4').click(clearDivs);
+    $('.Q5').attr('name', 'JQ5').click(clearDivs);
+    $('.Q6').attr('name', 'JQ6').click(clearDivs);
   }
 
   function jqueryMagic(){
     $('#about').hide();
     $('#searchJQ').text('Search Jquery').addClass('.searchJquery').click(showSearchBox).click(hideH4);
-    $('#quizJQ').text('Jquery Quiz').addClass('.quizJquery').click(produceTable).click(jqueryQuiz).click(hideH4).attr('name', 'jqueryQuiz').click(submitButtons);
+    $('#quizJQ').text('Jquery Quiz').addClass('.quizJquery').click(produceTable).click(jqueryQuiz).click(hideH4).attr('name', 'jqueryQuiz');
     $('#linkJQ').click(showSiteLinks).click(hideH4);
     $('#aboutJQ').click(showAboutPage).click(hideH4);
   }
